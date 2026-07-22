@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---- Theme tokens ----
+   Dark is the default (matches the original design). Adding `light`
+   to <html> (see ThemeToggle) swaps every token below, and every
+   bg-panel / text-white / border-white/x class in the app updates
+   automatically since those colors are wired to these variables. */
+:root {
+  --color-base: 11 13 16;      /* page background */
+  --color-panel: 18 21 26;
+  --color-panel2: 26 30 36;
+  --color-white: 255 255 255;  /* primary foreground text + borders */
+  --color-muted: 156 163 175;  /* secondary text */
+  --color-gold: 200 169 110;
+  --color-goldlight: 217 192 143;
+}
+
+html.light {
+  --color-base: 250 248 244;
+  --color-panel: 255 255 255;
+  --color-panel2: 244 240 232;
+  --color-white: 26 23 20;
+  --color-muted: 107 99 90;
+  --color-gold: 168 128 62;
+  --color-goldlight: 193 152 84;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(var(--color-base));
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--color-gold));
+  border-radius: 4px;
+}
+
+@keyframes fillBar {
+  from { width: 0%; }
+}
+.skill-fill-animated {
+  animation: fillBar 1.2s ease-out forwards;
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* Gentle floating motion for decorative rings/blobs */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-14px); }
+}
+.float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+.float-slow-delay {
+  animation: floatSlow 6s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+/* Soft pulsing glow, used sparingly on accent shapes */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.06); }
+}
+.pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Image zoom-on-hover for card thumbnails */
+.img-zoom {
+  transition: transform 0.6s ease;
+}
+.img-zoom-wrap:hover .img-zoom {
+  transform: scale(1.08);
+}

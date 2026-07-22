@@ -1,0 +1,95 @@
+import "./globals.css";
+import { Poppins, Inter } from "next/font/google";
+import { SITE_INFO } from "@/data/constants";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+export const metadata = {
+  metadataBase: new URL(SITE_INFO.baseUrl),
+  title: {
+    default: `${SITE_INFO.name} — Web, App & Digital Growth Studio`,
+    template: `%s | ${SITE_INFO.name}`,
+  },
+  description: `${SITE_INFO.name} builds custom websites, mobile apps, APIs, and digital marketing campaigns for growing businesses.`,
+  keywords: [
+    "web development agency",
+    "mobile app development company",
+    "React Node.js Laravel developer",
+    "digital marketing agency Gurugram",
+    "custom software development",
+    "MERN stack development",
+  ],
+  authors: [{ name: SITE_INFO.name }],
+  creator: SITE_INFO.name,
+  publisher: SITE_INFO.name,
+  alternates: {
+    canonical: SITE_INFO.baseUrl,
+  },
+  openGraph: {
+    type: "website",
+    siteName: SITE_INFO.name,
+    title: `${SITE_INFO.name} — Web, App & Digital Growth Studio`,
+    description: SITE_INFO.tagline,
+    url: SITE_INFO.baseUrl,
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE_INFO.name} — Web, App & Digital Growth Studio`,
+    description: SITE_INFO.tagline,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+};
+
+export const viewport = {
+  themeColor: "#0b0d10",
+  width: "device-width",
+  initialScale: 1,
+};
+
+// Runs before paint so the correct theme class is on <html> before
+// React hydrates — prevents a flash of the wrong theme on load.
+const themeInitScript = `
+(function () {
+  try {
+    var stored = localStorage.getItem("theme");
+    var theme = stored || "dark";
+    if (theme === "light") document.documentElement.classList.add("light");
+  } catch (e) {}
+})();
+`;
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
+      <body className={`${poppins.variable} ${inter.variable} bg-base text-white antialiased font-sans`}>
+        <Navbar />
+        <div className="pt-20">{children}</div>
+        <Footer />
+      </body>
+    </html>
+  );
+}
