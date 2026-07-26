@@ -8,11 +8,13 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { SITE_INFO } from "@/data/constants";
+
 const heroImages = [
   "/images/smart.png",
   "/images/web_development.png",
   "/images/app_development.png",
 ];
+
 function TypedText({ words }) {
   const [wordIdx, setWordIdx] = useState(0);
   const [displayed, setDisplayed] = useState("");
@@ -42,15 +44,15 @@ function TypedText({ words }) {
 
 function HeroSlide() {
   return (
-    <div className="relative z-10 flex flex-col items-center justify-center min-h-[100vh] text-center max-w-2xl mx-auto px-6">
-      <div className="text-gold/80 text-sm font-medium mb-4 tracking-wide">
+    <div className="relative z-10 flex flex-col items-center justify-center min-h-[100svh] text-center max-w-2xl mx-auto px-4 sm:px-6">
+      <div className="text-gold/80 text-xs sm:text-sm font-medium mb-3 sm:mb-4 tracking-wide">
         // Design. Build. Launch.
       </div>
-      <h1 className="whitespace-nowrap text-4xl sm:text-5xl md:text-6xl font-display font-extrabold leading-tight">
+       <h1 className="whitespace-nowrap text-4xl sm:text-5xl md:text-6xl font-display font-extrabold leading-tight">
         {SITE_INFO.name.split(" ")[0]}{" "}
         <span className="text-gold">{SITE_INFO.name.split(" ").slice(1).join(" ")}</span>
       </h1>
-      <div className="mt-4 text-lg sm:text-xl text-muted">
+      <div className="mt-3 sm:mt-4 text-base sm:text-lg md:text-xl text-muted">
         We build{" "}
         <TypedText
           words={[
@@ -62,19 +64,19 @@ function HeroSlide() {
           ]}
         />
       </div>
-      <p className="mt-4 text-muted/80 max-w-lg mx-auto text-sm sm:text-base">
-        {SITE_INFO.tagline}
-      </p>
-      <div className="mt-8 flex flex-wrap gap-4 justify-center">
+<p className="mt-3 sm:mt-4 text-white/80 max-w-lg mx-auto text-sm sm:text-base px-2" style={{color:"white"}}>
+  {SITE_INFO.tagline}
+</p>
+      <div className="mt-6 sm:mt-8 flex flex-wrap gap-3 sm:gap-4 justify-center">
         <Link
           href="/#portfolio"
-          className="px-6 py-3 rounded-full bg-gold text-ink font-semibold hover:bg-goldlight transition"
+          className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-gold text-ink font-semibold hover:bg-goldlight transition text-sm sm:text-base"
         >
           View Portfolio
         </Link>
         <Link
           href="/#contact"
-          className="px-6 py-3 rounded-full border border-gold/60 text-gold font-semibold hover:bg-gold/10 transition"
+          className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-gold text-ink font-semibold hover:bg-goldlight transition text-sm sm:text-base"
         >
           Get In Touch
         </Link>
@@ -85,11 +87,12 @@ function HeroSlide() {
 
 function ImageSlide({ src }) {
   return (
-    <div className="relative w-full min-h-[100vh]">
+    <div className="relative w-full min-h-[100svh]">
       <Image
         src={src}
         alt="Stackwise Solutions work"
         fill
+        sizes="100vw"
         className="object-cover"
         priority
       />
@@ -110,24 +113,32 @@ export default function Hero() {
           backgroundSize: "40px 40px",
         }}
       />
-      <Swiper
-        modules={[Autoplay, Pagination]}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
-        pagination={{ clickable: false }}
-        // navigation
-        loop
-        speed={800}
-        className="hero-swiper w-full"
-      >
-        <SwiperSlide>
-          <HeroSlide />
-        </SwiperSlide>
-        {heroImages.map((src) => (
-          <SwiperSlide key={src}>
-            <ImageSlide src={src} />
+      {/* Mobile: static hero, no swiper/carousel at all */}
+      <div className="block sm:hidden">
+        <HeroSlide />
+      </div>
+
+      {/* sm and up: full swiper carousel */}
+      <div className="hidden sm:block">
+        <Swiper
+          modules={[Autoplay, Pagination]}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          pagination={{ clickable: false }}
+          // navigation
+          loop
+          speed={800}
+          className="hero-swiper w-full"
+        >
+          <SwiperSlide>
+            <HeroSlide />
           </SwiperSlide>
-        ))}
-      </Swiper>
+          {heroImages.map((src) => (
+            <SwiperSlide key={src}>
+              <ImageSlide src={src} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
       <style jsx global>{`
         .hero-swiper .swiper-pagination-bullet {
           background: #c8a96e;
@@ -141,7 +152,12 @@ export default function Hero() {
           color: #c8a96e;
         }
         .hero-swiper .swiper-pagination {
-          bottom: 24px;
+          bottom: 16px;
+        }
+        @media (min-width: 640px) {
+          .hero-swiper .swiper-pagination {
+            bottom: 24px;
+          }
         }
       `}</style>
     </section>

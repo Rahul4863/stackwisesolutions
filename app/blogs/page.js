@@ -1,7 +1,6 @@
 import { SITE_INFO } from "@/data/constants";
 import { BLOG_POSTS } from "@/data/blogs";
 import BlogList from "@/components/BlogList";
-
 export const metadata = {
   title: "Blog",
   description: `Practical guides on web development, mobile apps, and digital marketing from the ${SITE_INFO.name} team.`,
