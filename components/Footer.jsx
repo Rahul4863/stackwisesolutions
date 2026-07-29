@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaArrowUp } from "react-icons/fa";
 import { SITE_INFO, socials, SERVICES, INDUSTRIES } from "@/data/constants";
+import Image from "next/image";
 
 const QUICK_LINKS = [
   { label: "Home", href: "/" },
@@ -37,12 +38,22 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-4">
             <Link href="/" className="flex items-center gap-3 w-fit">
-              <div className="w-10 h-10 rounded-full bg-gold/15 border border-gold/40 flex items-center justify-center text-gold font-display font-bold text-sm shrink-0">
-                {SITE_INFO.initials}
-              </div>
-              <span className="text-white font-display font-semibold">
-                {SITE_INFO.name}
-              </span>
+              <Image
+      src="/images/stack_dark.png"
+      alt={SITE_INFO.name}
+      width={180}
+      height={56}
+      priority
+      className="h-14 sm:h-16 w-auto object-contain block [html.light_&]:hidden mix-blend-lighten"
+  />
+  <Image
+    src="/images/stack.png"
+    alt={SITE_INFO.name}
+    width={180}
+    height={56}
+    priority
+    className="h-14 sm:h-16 w-auto object-contain hidden [html.light_&]:block"
+  />
             </Link>
             <p className="text-muted text-sm leading-relaxed mt-4 max-w-xs">
               {SITE_INFO.tagline}

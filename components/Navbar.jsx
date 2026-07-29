@@ -5,6 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NAV_ITEMS, SERVICES, INDUSTRIES, SITE_INFO } from "@/data/constants";
 import ThemeToggle from "./ThemeToggle";
+import Image from "next/image";
+
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -69,21 +71,29 @@ export default function Navbar() {
     setMobileIndustriesOpen((o) => !o);
     setMobileServicesOpen(false);
   };
-
   const linkHref = (id) => (id === "hero" ? "/" : `/#${id}`);
   const isActive = (id) => isHome && activeSection === id;
-
   return (
     <header className="fixed top-0 left-0 right-0 z-40 bg-panel/95 backdrop-blur border-b border-white/5">
       <div className="px-6 sm:px-10 lg:px-16 2xl:px-24 h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 shrink-0">
-          <div className="w-10 h-10 rounded-full bg-gold/15 border border-gold/40 flex items-center justify-center text-gold font-display font-bold text-sm">
-            {SITE_INFO.initials}
-          </div>
-          <span className="text-white font-display font-semibold hidden sm:block">
-            {SITE_INFO.name}
-          </span>
-        </Link>
+      <Image
+    src="/images/stack_dark.png"
+    alt={SITE_INFO.name}
+    width={180}
+    height={56}
+    priority
+    className="h-14 sm:h-16 w-auto object-contain block [html.light_&]:hidden mix-blend-lighten"
+  />
+  <Image
+    src="/images/stack.png"
+    alt={SITE_INFO.name}
+    width={180}
+    height={56}
+    priority
+    className="h-14 sm:h-16 w-auto object-contain hidden [html.light_&]:block"
+  />
+</Link>
 
         <nav ref={navRef} className="hidden lg:flex items-center gap-1">
           {NAV_ITEMS.map(({ id, label }) => {
