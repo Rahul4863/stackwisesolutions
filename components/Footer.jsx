@@ -34,9 +34,9 @@ export default function Footer() {
       />
 
       <div className="relative z-10 px-6 sm:px-10 lg:px-16 2xl:px-24 pt-16 pb-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-6">
           {/* Brand */}
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-3">
             <Link href="/" className="flex items-center gap-3 w-fit">
               <Image
       src="/images/stack_dark.png"
@@ -151,7 +151,7 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-3">
             <h4 className="text-white font-display font-semibold text-sm mb-4">
               Get in Touch
             </h4>
@@ -159,10 +159,12 @@ export default function Footer() {
               <li>
                 <a
                   href={`mailto:${SITE_INFO.email}`}
-                  className="flex items-start gap-1.5 text-muted text-sm hover:text-gold transition group"
+                  className="flex items-start gap-1 text-muted text-sm hover:text-gold transition group min-w-0"
                 >
                   <FaEnvelope size={13} className="mt-0.5 text-gold shrink-0" />
-                  <span className="break-all">{SITE_INFO.email}</span>
+                  <span className="break-words min-w-0 whitespace-nowrap sm:whitespace-normal">
+                    {SITE_INFO.email}
+                  </span>
                 </a>
               </li>
               <li>

@@ -30,7 +30,7 @@ export const SITE_INFO = {
   initials: "SS",
   tagline: "We design, build & grow digital products.",
   founded: "2023",
-  email: "rahulsoni6352@gmail.com",
+  email: "info.stackwisesolutions@gmail.com",
   phone: "+91 7982972151",
   altPhone: "+91-798-297-2151",
   address: "Subhash Nagar, Gurugram, Haryana 122001",

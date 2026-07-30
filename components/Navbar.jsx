@@ -78,12 +78,12 @@ export default function Navbar() {
       <div className="px-6 sm:px-10 lg:px-16 2xl:px-24 h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 shrink-0">
       <Image
-    src="/images/stack_dark.png"
-    alt={SITE_INFO.name}
-    width={180}
-    height={56}
-    priority
-    className="h-14 sm:h-16 w-auto object-contain block [html.light_&]:hidden mix-blend-lighten"
+      src="/images/stack_dark.png"
+      alt={SITE_INFO.name}
+      width={180}
+      height={56}
+      priority
+      className="h-14 sm:h-16 w-auto object-contain block [html.light_&]:hidden mix-blend-lighten"
   />
   <Image
     src="/images/stack.png"
