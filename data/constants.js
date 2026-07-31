@@ -5,6 +5,19 @@ import { SiReact } from "react-icons/si";
 import { MdPhoneIphone } from "react-icons/md";
 import { BiLinkAlt } from "react-icons/bi";
 import { GiRocket } from "react-icons/gi";
+import { FaPhp, FaGitAlt, FaDocker, FaNodeJs, FaReact } from "react-icons/fa6";
+import {
+  SiLaravel,
+  SiJavascript,
+  SiTailwindcss,
+  SiBootstrap,
+  SiMysql,
+  SiMongodb,
+  SiJsonwebtokens,
+  SiExpress,
+  SiRedux,
+  SiGithub,
+} from "react-icons/si";
 import {
   FaHome,
   FaUser,
@@ -22,8 +35,6 @@ import {
   FaFilm,
   FaIndustry,
 } from "react-icons/fa";
-
-// ---- Brand ----
 export const SITE_INFO = {
   name: "Stackwise Solutions",
   shortName: "Stackwise",
@@ -47,19 +58,46 @@ export const NAV_ITEMS = [
   { id: "contact", icon: FaEnvelope, label: "Contact" },
 ];
 
-export const SKILLS = [
-  { name: "PHP", val: 85 },
-  { name: "Laravel", val: 75 },
-  { name: "JavaScript (ES6+)", val: 85 },
-  { name: "React.js / Redux Toolkit", val: 80 },
-  { name: "Node.js / Express.js", val: 80 },
-  { name: "Tailwind CSS / Bootstrap", val: 80 },
-  { name: "MySQL", val: 80 },
-  { name: "MongoDB", val: 75 },
-  { name: "RESTful APIs / JWT Auth", val: 85 },
-  { name: "React Native", val: 55 },
-  { name: "Git & GitHub", val: 75 },
-  { name: "Docker / VPS Deployment", val: 60 },
+export const SKILL_CATEGORIES = [
+  {
+    title: "Backend",
+    items: [
+      { name: "PHP", icon: FaPhp },
+      { name: "Laravel", icon: SiLaravel },
+      { name: "Node.js", icon: FaNodeJs },
+      { name: "Express.js", icon: SiExpress },
+      { name: "RESTful APIs / JWT", icon: SiJsonwebtokens },
+    ],
+  },
+  {
+    title: "Frontend",
+    items: [
+      { name: "JavaScript (ES6+)", icon: SiJavascript },
+      { name: "React.js", icon: FaReact },
+      { name: "Redux Toolkit", icon: SiRedux },
+      { name: "Tailwind CSS", icon: SiTailwindcss },
+      { name: "Bootstrap", icon: SiBootstrap },
+    ],
+  },
+  {
+    title: "Database",
+    items: [
+      { name: "MySQL", icon: SiMysql },
+      { name: "MongoDB", icon: SiMongodb },
+    ],
+  },
+  {
+    title: "Mobile",
+    items: [{ name: "React Native", icon: FaReact }],
+  },
+  {
+    title: "Tools & DevOps",
+    items: [
+      { name: "Git & GitHub", icon: FaGitAlt },
+      { name: "GitHub", icon: SiGithub },
+      { name: "Docker / VPS Deployment", icon: FaDocker },
+    ],
+  },
 ];
 
 export const STATS = [

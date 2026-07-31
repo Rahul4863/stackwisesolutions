@@ -4,7 +4,6 @@ export const metadata = {
   title: "Page Not Found",
   robots: { index: false, follow: false },
 };
-
 export default function NotFound() {
   return (
     <section className="py-28 px-6 sm:px-10 lg:px-16 2xl:px-24 text-center min-h-[60vh] flex flex-col items-center justify-center">

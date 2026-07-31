@@ -189,7 +189,6 @@ export default function Footer() {
             <strong className="text-white">{SITE_INFO.name}</strong> · All
             Rights Reserved
           </p>
-
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             aria-label="Back to top"
