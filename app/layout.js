@@ -26,6 +26,7 @@ export const metadata = {
   description: `${SITE_INFO.name} builds custom websites, mobile apps, APIs, and digital marketing campaigns for growing businesses.`,
   keywords: [
     "web development agency",
+    "cms development",
     "mobile app development company",
     "React Node.js Laravel developer",
     "digital marketing agency Gurugram",

@@ -39,7 +39,7 @@ export default function Footer() {
           <div className="lg:col-span-3">
             <Link href="/" className="flex items-center gap-3 w-fit">
               <Image
-      src="/images/stack_dark.png"
+      src="/images/footer_stack.png"
       alt={SITE_INFO.name}
       width={180}
       height={56}
@@ -47,7 +47,7 @@ export default function Footer() {
       className="h-14 sm:h-16 w-auto object-contain block [html.light_&]:hidden mix-blend-lighten"
   />
   <Image
-    src="/images/stack.png"
+    src="/images/footer_stack.png"
     alt={SITE_INFO.name}
     width={180}
     height={56}
