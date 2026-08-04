@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { SITE_INFO } from "@/data/constants";
 import Reveal from "./Reveal";
 
@@ -49,12 +48,14 @@ export default function About() {
         {/* Identity card */}
         <Reveal direction="left" className="relative lg:sticky lg:top-24">
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/5 mb-4 img-zoom-wrap">
-            <Image
-              src="https://picsum.photos/seed/stackwise-workspace/640/480"
+            {/* Plain <img> (not next/image) since this is an external stock
+                URL — avoids needing images.unsplash.com added to
+                next.config.js images.remotePatterns. */}
+            <img
+              src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=640&h=480&fit=crop&auto=format&q=80"
               alt={`${SITE_INFO.name} team workspace`}
-              fill
-              sizes="(max-width: 1024px) 90vw, 320px"
-              className="object-cover img-zoom"
+              className="absolute inset-0 w-full h-full object-cover img-zoom"
+              loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-panel via-transparent to-transparent" />
           </div>
@@ -138,7 +139,7 @@ export default function About() {
           <div className="flex flex-wrap gap-4 mt-6">
             <Link
               href="/#contact"
-              className="px-6 py-3 rounded-full bg-gold text-ink font-semibold hover:bg-goldlight transition"
+              className="px-6 py-3 rounded-full bg-gold text-ink font-semibold hover:bg-goldlight btn-pop transition"
             >
               Get a Free Consultation
             </Link>

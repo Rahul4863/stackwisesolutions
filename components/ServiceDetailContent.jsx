@@ -43,6 +43,18 @@ const PROCESS_STEPS = [
   ["Launch & Support", "We deploy, test, and support you after go-live."],
 ];
 
+// Each service family gets its own gallery "frame" style so a Graphic
+// Designing page doesn't look like a re-skinned Backend Development page —
+// same component, genuinely different presentation per service.
+function getVisualStyle(slug) {
+  if (["web-development", "frontend-development"].includes(slug)) return "browser";
+  if (["backend-development", "api-integration", "deployment-devops"].includes(slug)) return "terminal";
+  if (slug === "mobile-app-development") return "phone";
+  if (slug === "graphic-designing") return "polaroid";
+  if (slug === "digital-marketing") return "stats";
+  return "default";
+}
+
 export default function ServiceDetailContent({ slug }) {
   const [enquiryOpen, setEnquiryOpen] = useState(false);
   const service = SERVICES.find((s) => s.slug === slug);
@@ -55,6 +67,12 @@ export default function ServiceDetailContent({ slug }) {
   const nextService = SERVICES[(idx + 1) % SERVICES.length];
   const otherServices = SERVICES.filter((s) => s.slug !== slug).slice(0, 3);
   const testimonial = TESTIMONIALS[idx % TESTIMONIALS.length];
+  // Same accent order as the homepage Services grid, so a service keeps
+  // its own color identity when you land on its detail page.
+  const ACCENTS = ["--accent-1", "--accent-2", "--accent-3", "--accent-4", "--accent-5", "--accent-6", "--accent-7", "--accent-8"];
+  const accentVar = ACCENTS[idx % ACCENTS.length];
+  const accent = `rgb(var(${accentVar}))`;
+  const visualStyle = getVisualStyle(service.slug);
 
   return (
     <>
@@ -70,7 +88,10 @@ export default function ServiceDetailContent({ slug }) {
 
         {/* Header banner */}
         <Reveal>
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-panel via-panel to-panel2 border border-white/5 mb-12 grid lg:grid-cols-[1.15fr_0.85fr]">
+          <div
+            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-panel via-panel to-panel2 border border-black/5 mb-6 grid lg:grid-cols-[1.15fr_0.85fr]"
+            style={{ boxShadow: `inset 0 3px 0 0 ${accent}` }}
+          >
             <div
               className="absolute inset-0 opacity-[0.05] pointer-events-none"
               style={{
@@ -82,11 +103,14 @@ export default function ServiceDetailContent({ slug }) {
 
             <div className="relative z-10 p-8 sm:p-12 flex flex-col justify-center">
               <div className="flex items-start sm:items-center gap-4 mb-4">
-                <div className="w-14 h-14 rounded-2xl bg-gold/10 border border-gold/20 text-gold flex items-center justify-center shrink-0">
+                <div
+                  className="w-14 h-14 rounded-2xl text-white flex items-center justify-center shrink-0 shadow-lg pulse-glow"
+                  style={{ background: accent }}
+                >
                   <Icon size={28} />
                 </div>
                 <div>
-                  <div className="text-gold text-sm font-medium mb-1">{service.tagline}</div>
+                  <div className="text-sm font-medium mb-1" style={{ color: accent }}>{service.tagline}</div>
                   <h1 className="text-3xl sm:text-4xl font-display font-bold text-white">
                     {service.title}
                   </h1>
@@ -98,7 +122,7 @@ export default function ServiceDetailContent({ slug }) {
               <div className="flex flex-wrap gap-3">
                 <button
                   onClick={() => setEnquiryOpen(true)}
-                  className="px-6 py-3 rounded-full bg-gold text-ink font-semibold hover:bg-goldlight transition"
+                  className="px-6 py-3 rounded-full bg-gold text-ink font-semibold hover:bg-goldlight btn-pop transition"
                 >
                   Enquire Now →
                 </button>
@@ -125,6 +149,123 @@ export default function ServiceDetailContent({ slug }) {
           </div>
         </Reveal>
 
+        {/* Secondary image strip — presentation style depends on the
+            service family (browser mockup, terminal, phone frame,
+            polaroid gallery, or stat cards), so each service page has
+            its own visual identity instead of a generic gallery. */}
+        {service.image2 && (
+          <Reveal delay={60}>
+            {visualStyle === "browser" && (
+              <div className="mb-12 rounded-2xl overflow-hidden border border-black/10 shadow-xl">
+                <div className="flex items-center gap-1.5 px-4 py-2.5 bg-panel2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#e0605a]" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#e6b450]" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#5cb779]" />
+                  <span
+                    className="ml-3 text-[11px] px-3 py-1 rounded-full bg-panel text-muted truncate max-w-[240px]"
+                  >
+                    {SITE_INFO.baseUrl?.replace(/^https?:\/\//, "") || "yourproject.com"}
+                  </span>
+                </div>
+                <div className="grid sm:grid-cols-2">
+                  <div className="relative h-48 sm:h-64 img-zoom-wrap">
+                    <img src={service.image} alt={`${service.title} — desktop view`} className="img-zoom absolute inset-0 w-full h-full object-cover" />
+                  </div>
+                  <div className="relative h-48 sm:h-64 img-zoom-wrap border-t sm:border-t-0 sm:border-l border-black/10">
+                    <img src={service.image2} alt={`${service.title} — responsive view`} className="img-zoom absolute inset-0 w-full h-full object-cover" />
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {visualStyle === "terminal" && (
+              <div className="mb-12 rounded-2xl overflow-hidden border border-black/10 shadow-xl bg-[#1a1712]">
+                <div className="flex items-center gap-2 px-4 py-2.5 bg-[#221e17]">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#e0605a]" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#e6b450]" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#5cb779]" />
+                  <span className="ml-3 text-[11px] font-mono text-white/50">
+                    ~/{service.slug} — deploy.log
+                  </span>
+                </div>
+                <div className="grid sm:grid-cols-2 gap-px bg-black/20">
+                  <div className="relative h-44 sm:h-56">
+                    <img src={service.image} alt={`${service.title} — system view`} className="absolute inset-0 w-full h-full object-cover opacity-90" />
+                  </div>
+                  <div className="relative h-44 sm:h-56">
+                    <img src={service.image2} alt={`${service.title} — infrastructure view`} className="absolute inset-0 w-full h-full object-cover opacity-90" />
+                  </div>
+                </div>
+                <div className="px-4 py-3 font-mono text-[11px] text-[#8fd19e]">
+                  <span style={{ color: accent }}>$</span> build passed · tests green · deployed to production ✓
+                </div>
+              </div>
+            )}
+
+            {visualStyle === "phone" && (
+              <div className="mb-12 flex items-end justify-center gap-6 sm:gap-10 py-4">
+                <div className="relative w-[150px] sm:w-[190px] aspect-[9/19] rounded-[2rem] border-[6px] border-black/80 shadow-2xl overflow-hidden -rotate-6 img-zoom-wrap">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-4 bg-black/80 rounded-b-xl z-10" />
+                  <img src={service.image} alt={`${service.title} — app screen 1`} className="img-zoom absolute inset-0 w-full h-full object-cover" />
+                </div>
+                <div className="relative w-[160px] sm:w-[210px] aspect-[9/19] rounded-[2rem] border-[6px] border-black/80 shadow-2xl overflow-hidden translate-y-3 img-zoom-wrap">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-4 bg-black/80 rounded-b-xl z-10" />
+                  <img src={service.image2} alt={`${service.title} — app screen 2`} className="img-zoom absolute inset-0 w-full h-full object-cover" />
+                </div>
+              </div>
+            )}
+
+            {visualStyle === "polaroid" && (
+              <div className="mb-16 flex flex-wrap justify-center gap-6 sm:gap-10 py-6">
+                <div className="bg-white p-3 pb-8 shadow-2xl -rotate-6 w-48 sm:w-60 img-zoom-wrap">
+                  <div className="relative h-40 sm:h-52 overflow-hidden">
+                    <img src={service.image} alt={`${service.title} — concept 1`} className="img-zoom absolute inset-0 w-full h-full object-cover" />
+                  </div>
+                  <div className="text-center text-[11px] text-black/50 font-display mt-2">brand · v1</div>
+                </div>
+                <div className="bg-white p-3 pb-8 shadow-2xl rotate-3 w-48 sm:w-60 img-zoom-wrap sm:translate-y-4">
+                  <div className="relative h-40 sm:h-52 overflow-hidden">
+                    <img src={service.image2} alt={`${service.title} — concept 2`} className="img-zoom absolute inset-0 w-full h-full object-cover" />
+                  </div>
+                  <div className="text-center text-[11px] text-black/50 font-display mt-2">mockup · final</div>
+                </div>
+              </div>
+            )}
+
+            {visualStyle === "stats" && (
+              <div className="mb-12 relative">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="relative h-48 sm:h-60 rounded-2xl overflow-hidden img-zoom-wrap border border-black/10">
+                    <img src={service.image} alt={`${service.title} — campaign view`} className="img-zoom absolute inset-0 w-full h-full object-cover" />
+                  </div>
+                  <div className="relative h-48 sm:h-60 rounded-2xl overflow-hidden img-zoom-wrap border border-black/10">
+                    <img src={service.image2} alt={`${service.title} — analytics view`} className="img-zoom absolute inset-0 w-full h-full object-cover" />
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-3 mt-4">
+                  {[["+180%", "Avg. traffic growth"], ["3.2x", "Lead conversion lift"], ["24/7", "Campaign monitoring"]].map(([num, label]) => (
+                    <div key={label} className="flex items-center gap-2 px-4 py-2 rounded-full bg-panel border border-black/10 text-sm">
+                      <span className="font-display font-bold" style={{ color: accent }}>{num}</span>
+                      <span className="text-muted text-xs">{label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {visualStyle === "default" && (
+              <div className="grid sm:grid-cols-2 gap-4 mb-12">
+                <div className="relative h-40 sm:h-52 rounded-2xl overflow-hidden img-zoom-wrap border border-black/10">
+                  <img src={service.image} alt={`${service.title} — reference 1`} className="img-zoom absolute inset-0 w-full h-full object-cover" />
+                </div>
+                <div className="relative h-40 sm:h-52 rounded-2xl overflow-hidden img-zoom-wrap border border-black/10">
+                  <img src={service.image2} alt={`${service.title} — reference 2`} className="img-zoom absolute inset-0 w-full h-full object-cover" />
+                </div>
+              </div>
+            )}
+          </Reveal>
+        )}
+
         {/* Highlights strip */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-14">
           {[
@@ -147,6 +288,18 @@ export default function ServiceDetailContent({ slug }) {
 
         <div className="grid md:grid-cols-[1fr_320px] gap-10">
           <div>
+            {/* Overview — a longer, more detailed explanation of the service */}
+            {service.overview && (
+              <>
+                <h2 className="text-white font-display font-semibold text-lg mb-4">
+                  How we approach {service.title.toLowerCase()}
+                </h2>
+                <p className="text-muted text-sm leading-relaxed mb-12">
+                  {service.overview}
+                </p>
+              </>
+            )}
+
             {/* What's included */}
             <h2 className="text-white font-display font-semibold text-lg mb-4">
               What's included
@@ -288,7 +441,7 @@ export default function ServiceDetailContent({ slug }) {
             {/* Testimonial */}
             <div className="relative bg-panel border border-white/5 rounded-2xl p-6 sm:p-8 overflow-hidden">
               <span className="absolute -top-2 left-4 text-6xl font-display text-gold/10 leading-none select-none">
-                “
+                "
               </span>
               <div className="flex gap-0.5 text-gold text-xs mb-3 relative z-10">
                 {Array.from({ length: 5 }).map((_, i) => (

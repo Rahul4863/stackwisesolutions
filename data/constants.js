@@ -191,14 +191,24 @@ export const PORTFOLIO_DETAILS = {
 };
 
 // ---- Services (with sub-services shown inside each service) ----
+// NOTE: these are real, hand-picked Unsplash photos (verified, not random
+// keyword-matched placeholders) chosen to actually match each service —
+// code on screens for dev services, UI mockups for design, server racks for
+// backend/DevOps, etc. Unsplash photos are free to use commercially with no
+// attribution required. Swap in your own studio photography whenever you're
+// ready — that'll always look more "on-brand" than stock.
+
 export const SERVICES = [
   {
     slug: "web-development",
-    image: "https://picsum.photos/seed/web-development/900/650",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=900&h=650&fit=crop&auto=format&q=80",
+    image2: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900&h=650&fit=crop&auto=format&q=80",
     icon: FaGlobe,
     title: "Web Development",
     tagline: "End-to-end scalable web solutions",
-    desc: "Custom websites and web apps built to be fast, secure, and easy to manage.",
+    desc: "Custom websites and web apps built to be fast, secure, and easy to manage — from a five-page brochure site to a full multi-role web application.",
+    overview:
+      "We plan every build around three things: how fast it loads, how easily you can update it yourself, and how well it holds up as your traffic grows. That means clean component structure on the frontend, a properly indexed database on the backend, and a CMS or admin panel that doesn't require a developer for routine content changes. Whether you need a marketing site, a customer portal, or an internal tool, we scope the stack to the problem instead of defaulting to one framework for everything.",
     metaDescription:
       "Custom website and web application development using React, Node.js, Laravel and WordPress. Fast, secure, SEO-friendly builds — get a free quote.",
     subServices: [
@@ -206,12 +216,14 @@ export const SERVICES = [
       "CMS Development (WordPress / Custom CMS)",
       "E-commerce Websites",
       "Web App Development (MERN / Laravel)",
+      "Website Speed & SEO Audits",
     ],
     benefits: [
       "Mobile-first, SEO-friendly builds out of the box",
       "Scalable architecture that grows with your business",
       "Easy-to-manage CMS or admin panel included",
       "Ongoing support and updates after launch",
+      "Clean, documented handover so you're never locked in",
     ],
     idealFor: [
       "Businesses launching a new website",
@@ -247,11 +259,14 @@ export const SERVICES = [
   },
   {
     slug: "frontend-development",
-    image: "https://picsum.photos/seed/frontend-development/900/650",
+    image: "https://images.unsplash.com/photo-1602576666092-bf6447a729fc?w=900&h=650&fit=crop&auto=format&q=80",
+    image2: "https://images.unsplash.com/photo-1558655146-d09347e92766?w=900&h=650&fit=crop&auto=format&q=80",
     icon: SiReact,
-    title: "Frontend Development",
+    title: "UI/UX Development",
     tagline: "Modern, fast & responsive UI",
-    desc: "Pixel-perfect, responsive interfaces that feel great on every device.",
+    desc: "Pixel-perfect, responsive interfaces that feel great on every device — built as reusable components, not one-off pages.",
+    overview:
+      "A good interface is judged on two things: how it looks in a screenshot, and how it feels after the tenth click. We focus on the second one — predictable navigation, fast perceived load times, and components that stay consistent as the product grows. If you already have designs in Figma, we build to them pixel-for-pixel; if you don't, we can shape the UI around your content and brand as we go.",
     metaDescription:
       "React.js frontend development with Redux Toolkit and Tailwind CSS. Responsive, component-based, performance-optimized interfaces built for conversion.",
     subServices: [
@@ -259,6 +274,7 @@ export const SERVICES = [
       "Component-Based Architecture",
       "Performance Optimization & Lazy Loading",
       "Tailwind CSS / Bootstrap Implementation",
+      "Accessibility & Cross-Browser Testing",
     ],
     benefits: [
       "Interfaces that load fast and feel instant",
@@ -296,11 +312,14 @@ export const SERVICES = [
   },
   {
     slug: "backend-development",
-    image: "https://picsum.photos/seed/backend-development/900/650",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&h=650&fit=crop&auto=format&q=80",
+    image2: "https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?w=900&h=650&fit=crop&auto=format&q=80",
     icon: FaServer,
     title: "Backend Development",
     tagline: "Secure & scalable server-side systems",
-    desc: "Robust APIs and databases that keep your product running reliably at scale.",
+    desc: "Robust APIs and databases that keep your product running reliably at scale — designed to handle real traffic, not just the demo.",
+    overview:
+      "The backend is the part users never see and notice most when it fails — a slow query, a missing index, an auth check that isn't quite right. We design schemas around how the data will actually be queried, not just how it looks on a whiteboard, and build APIs with proper validation, role-based access, and documentation from day one so your team isn't reverse-engineering it later.",
     metaDescription:
       "Backend development with Node.js, Express.js and Laravel — secure REST APIs, JWT authentication, and optimized MySQL / MongoDB database design.",
     subServices: [
@@ -308,6 +327,7 @@ export const SERVICES = [
       "JWT Authentication & Role-Based Access",
       "Database Design & Optimization (MySQL / MongoDB)",
       "Secure API Routing & Validation",
+      "API Documentation (Postman / Swagger)",
     ],
     benefits: [
       "APIs designed to handle real production traffic",
@@ -345,17 +365,21 @@ export const SERVICES = [
   },
   {
     slug: "mobile-app-development",
-    image: "https://picsum.photos/seed/mobile-app-development/900/650",
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=900&h=650&fit=crop&auto=format&q=80",
+    image2: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=900&h=650&fit=crop&auto=format&q=80",
     icon: MdPhoneIphone,
     title: "Mobile App Development",
     tagline: "Cross-platform mobile apps",
-    desc: "React Native apps for Android & iOS with one shared codebase.",
+    desc: "React Native apps for Android & iOS with one shared codebase — so you ship both platforms without doubling your budget or timeline.",
+    overview:
+      "Most businesses don't need two separate native teams to get a good mobile app — they need one codebase that behaves natively on both platforms. React Native gets you there: shared logic, platform-specific polish where it matters, and a single pipeline for updates. We handle everything from the first build to Play Store / App Store submission, so the app you demo is the app that actually ships.",
     metaDescription:
       "React Native mobile app development for Android & iOS. One codebase, native performance, API integration and store-ready builds.",
     subServices: [
       "React Native App Development",
       "API Integration with Backend",
       "Play Store / App Store Deployment",
+      "Push Notifications & Offline Support",
       "App Maintenance & Updates",
     ],
     benefits: [
@@ -394,11 +418,14 @@ export const SERVICES = [
   },
   {
     slug: "api-integration",
-    image: "https://picsum.photos/seed/api-integration/900/650",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&h=650&fit=crop&auto=format&q=80",
+    image2: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=900&h=650&fit=crop&auto=format&q=80",
     icon: BiLinkAlt,
     title: "API Integration",
     tagline: "Seamless third-party integrations",
-    desc: "Connect your product to the payment, AI, and mapping services it needs.",
+    desc: "Connect your product to the payment, AI, and mapping services it needs — wired up securely and tested before it touches real users.",
+    overview:
+      "Integrations look simple in the docs and get complicated in production — failed payments that need retry logic, webhooks that arrive out of order, rate limits you only discover under load. We build these with proper error handling and signature verification from the start, so a third-party outage or a malformed webhook doesn't take down your app with it.",
     metaDescription:
       "Third-party API integration services — Razorpay & Stripe payments, OpenAI, Google Maps, and custom webhook automation for your product.",
     subServices: [
@@ -406,6 +433,7 @@ export const SERVICES = [
       "OpenAI / AI API Integration",
       "Google Maps & Location Services",
       "Webhook & Third-Party Automation",
+      "CRM & Marketing Tool Integrations",
     ],
     benefits: [
       "Secure, tested payment flows that don't lose transactions",
@@ -443,11 +471,14 @@ export const SERVICES = [
   },
   {
     slug: "deployment-devops",
-    image: "https://picsum.photos/seed/deployment-devops/900/650",
+    image: "https://images.unsplash.com/photo-1667264501379-c1537934c7ab?w=900&h=650&fit=crop&auto=format&q=80",
+    image2: "https://images.unsplash.com/photo-1580106815433-a5b1d1d53d85?w=900&h=650&fit=crop&auto=format&q=80",
     icon: GiRocket,
     title: "Deployment & DevOps",
     tagline: "Reliable deployment & scaling",
-    desc: "Get your application live and keep it fast, secure, and monitored.",
+    desc: "Get your application live and keep it fast, secure, and monitored — with a deployment process that doesn't depend on one person remembering the steps.",
+    overview:
+      "A lot of \"it works on my machine\" problems disappear once deployment is automated instead of manual. We set up CI/CD so every push is built, tested, and shipped the same way, containerize with Docker for consistent environments, and put monitoring in place so you find out about a problem from an alert — not from a customer complaint.",
     metaDescription:
       "VPS and cloud deployment, CI/CD pipeline setup, Docker, and server monitoring — reliable DevOps for web and mobile applications.",
     subServices: [
@@ -455,6 +486,7 @@ export const SERVICES = [
       "CI/CD Pipeline Setup",
       "Server Optimization & Monitoring",
       "Domain & SSL Configuration",
+      "Docker Containerization",
     ],
     benefits: [
       "Zero-downtime deployments once your pipeline is set up",
@@ -492,11 +524,14 @@ export const SERVICES = [
   },
   {
     slug: "graphic-designing",
-    image: "https://picsum.photos/seed/graphic-designing/900/650",
+    image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=900&h=650&fit=crop&auto=format&q=80",
+    image2: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=900&h=650&fit=crop&auto=format&q=80",
     icon: FaPaintBrush,
     title: "Graphic Designing",
     tagline: "Clean, modern visual identity",
-    desc: "Branding and creatives that make your business instantly recognizable.",
+    desc: "Branding and creatives that make your business instantly recognizable — designed to hold up across print, social, and web.",
+    overview:
+      "A brand kit is only useful if people actually use it consistently — which means clear rules, not just a pretty logo. We design with that in mind: a logo that works small on a favicon and large on a banner, a color and type system your team can apply without asking us every time, and export-ready files for whichever platform you need next.",
     metaDescription:
       "Logo design, brand identity kits, and social media creatives. Clean, modern graphic design for businesses that want to stand out.",
     subServices: [
@@ -504,6 +539,7 @@ export const SERVICES = [
       "Social Media Creatives & Banners",
       "Marketing Collateral (Flyers, Brochures)",
       "UI Mockups & Presentation Decks",
+      "Packaging & Print Design",
     ],
     benefits: [
       "A brand identity that looks consistent everywhere",
@@ -541,11 +577,14 @@ export const SERVICES = [
   },
   {
     slug: "digital-marketing",
-    image: "https://picsum.photos/seed/digital-marketing/900/650",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&h=650&fit=crop&auto=format&q=80",
+    image2: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=900&h=650&fit=crop&auto=format&q=80",
     icon: FaBullhorn,
     title: "Digital Marketing",
     tagline: "Grow visibility, traffic & conversions",
-    desc: "SEO and ad campaigns that bring the right people to your business.",
+    desc: "SEO and ad campaigns that bring the right people to your business — measured properly, not just judged by likes and impressions.",
+    overview:
+      "Traffic that doesn't convert isn't really the goal — it's a step toward it. We start with an audit of what's actually holding your site back (technical SEO issues, content gaps, weak on-page structure), then build ad campaigns with proper conversion tracking so ad spend is judged against real outcomes: leads, signups, sales — not just clicks.",
     metaDescription:
       "SEO, social media management, and Google & Meta ad campaigns. Data-driven digital marketing to grow traffic and conversions.",
     subServices: [
@@ -553,6 +592,7 @@ export const SERVICES = [
       "Social Media Management & Content Calendars",
       "Google & Meta Ad Campaign Setup",
       "Performance Tracking & Monthly Reporting",
+      "Conversion Rate Optimization",
     ],
     benefits: [
       "SEO audits that fix what's actually holding your rankings back",
@@ -594,7 +634,7 @@ export const SERVICES = [
 export const INDUSTRIES = [
   {
     slug: "ecommerce-retail",
-    image: "https://picsum.photos/seed/ecommerce-retail/900/650",
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=900&h=650&fit=crop&auto=format&q=80",
     icon: FaShoppingCart,
     title: "E-commerce & Retail",
     tagline: "Online stores built to convert",
@@ -693,7 +733,7 @@ export const INDUSTRIES = [
   },
   {
     slug: "healthcare-medical",
-    image: "https://picsum.photos/seed/healthcare-medical/900/650",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900&h=650&fit=crop&auto=format&q=80",
     icon: FaHeartbeat,
     title: "Healthcare & Medical",
     tagline: "Reliable, secure patient-facing tech",
@@ -742,7 +782,7 @@ export const INDUSTRIES = [
   },
   {
     slug: "education-elearning",
-    image: "https://picsum.photos/seed/education-elearning/900/650",
+    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&h=650&fit=crop&auto=format&q=80",
     icon: FaGraduationCap,
     title: "Education & E-Learning",
     tagline: "Platforms for schools & online learning",
@@ -791,7 +831,7 @@ export const INDUSTRIES = [
   },
   {
     slug: "real-estate-property",
-    image: "https://picsum.photos/seed/real-estate-property/900/650",
+    image: "https://images.unsplash.com/photo-1592595896551-12b371d546d5?w=900&h=650&fit=crop&auto=format&q=80",
     icon: FaBuilding,
     title: "Real Estate & Property",
     tagline: "Listings that generate real leads",

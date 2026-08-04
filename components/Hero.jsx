@@ -70,13 +70,13 @@ function HeroSlide() {
       <div className="mt-6 sm:mt-8 flex flex-wrap gap-3 sm:gap-4 justify-center">
         <Link
           href="/#portfolio"
-          className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-gold text-ink font-semibold hover:bg-goldlight transition text-sm sm:text-base"
+          className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-gold text-ink font-semibold hover:bg-goldlight btn-pop transition text-sm sm:text-base"
         >
           View Portfolio
         </Link>
         <Link
           href="/#contact"
-          className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-gold text-ink font-semibold hover:bg-goldlight transition text-sm sm:text-base"
+          className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-gold text-ink font-semibold hover:bg-goldlight btn-pop transition text-sm sm:text-base"
         >
           Get In Touch
         </Link>

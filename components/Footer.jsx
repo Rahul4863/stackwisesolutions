@@ -37,23 +37,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-6">
           {/* Brand */}
           <div className="lg:col-span-3">
-            <Link href="/" className="flex items-center gap-3 w-fit">
+            <Link href="/" className="flex items-center gap-3 w-fit group">
               <Image
-      src="/images/footer_stack.png"
-      alt={SITE_INFO.name}
-      width={180}
-      height={56}
-      priority
-      className="h-14 sm:h-16 w-auto object-contain block [html.light_&]:hidden mix-blend-lighten"
-  />
-  <Image
-    src="/images/footer_stack.png"
-    alt={SITE_INFO.name}
-    width={180}
-    height={56}
-    priority
-    className="h-14 sm:h-16 w-auto object-contain hidden [html.light_&]:block"
-  />
+                src="/images/footer_stack.png"
+                alt={SITE_INFO.name}
+                width={180}
+                height={56}
+                priority
+                className="h-14 sm:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              />
             </Link>
             <p className="text-muted text-sm leading-relaxed mt-4 max-w-xs">
               {SITE_INFO.tagline}
@@ -114,7 +106,7 @@ export default function Footer() {
               ))}
               <li>
                 <Link
-                  href="/#services"
+                  href="/services"
                   className="text-gold text-sm font-medium hover:text-goldlight transition"
                 >
                   View all →

@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NAV_ITEMS, SERVICES, INDUSTRIES, SITE_INFO } from "@/data/constants";
-import ThemeToggle from "./ThemeToggle";
 import Image from "next/image";
 
 
@@ -76,24 +75,16 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-40 bg-panel/95 backdrop-blur border-b border-white/5">
       <div className="px-6 sm:px-10 lg:px-16 2xl:px-24 h-20 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3 shrink-0">
-      <Image
-      src="/images/stack_logo_dark.png"
-      alt={SITE_INFO.name}
-      width={180}
-      height={56}
-      priority
-      className="h-14 sm:h-16 w-auto object-contain block [html.light_&]:hidden mix-blend-lighten"
-  />
-  <Image
-    src="/images/updated_stack_lite.png"
-    alt={SITE_INFO.name}
-    width={180}
-    height={56}
-    priority
-    className="h-14 sm:h-16 w-auto object-contain hidden [html.light_&]:block"
-  />
-</Link>
+        <Link href="/" className="flex items-center gap-3 shrink-0 group">
+          <Image
+            src="/images/updated_stack_lite.png"
+            alt={SITE_INFO.name}
+            width={180}
+            height={56}
+            priority
+            className="h-14 sm:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+          />
+        </Link>
 
         <nav ref={navRef} className="hidden lg:flex items-center gap-1">
           {NAV_ITEMS.map(({ id, label }) => {
@@ -144,7 +135,7 @@ export default function Navbar() {
                         );
                       })}
                       <Link
-                        href="/#services"
+                        href="/services"
                         onClick={() => setServicesOpen(false)}
                         className="col-span-2 mt-1 text-center text-gold text-sm font-medium py-2.5 rounded-xl border border-gold/20 hover:bg-gold/10 transition"
                       >
@@ -238,17 +229,15 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden lg:flex items-center gap-3">
-          <ThemeToggle />
           <Link
             href="/#contact"
-            className="px-5 py-2.5 rounded-full bg-gold text-ink text-sm font-semibold hover:bg-goldlight transition"
+            className="px-5 py-2.5 rounded-full bg-gold text-ink text-sm font-semibold hover:bg-goldlight btn-pop transition"
           >
             Enquire Now
           </Link>
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
-          <ThemeToggle />
           <button
             className="w-10 h-10 rounded-full bg-panel2 border border-white/10 flex items-center justify-center text-gold"
             onClick={() => setOpen((o) => !o)}
@@ -298,7 +287,7 @@ export default function Navbar() {
                         </Link>
                       ))}
                       <Link
-                        href="/#services"
+                        href="/services"
                         onClick={() => {
                           setOpen(false);
                           setMobileServicesOpen(false);

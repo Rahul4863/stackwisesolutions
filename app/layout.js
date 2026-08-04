@@ -63,29 +63,14 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: "#0b0d10",
+  themeColor: "#f7f3eb",
   width: "device-width",
   initialScale: 1,
 };
 
-// Runs before paint so the correct theme class is on <html> before
-// React hydrates — prevents a flash of the wrong theme on load.
-const themeInitScript = `
-(function () {
-  try {
-    var stored = localStorage.getItem("theme");
-    var theme = stored || "dark";
-    if (theme === "light") document.documentElement.classList.add("light");
-  } catch (e) {}
-})();
-`;
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
-      </head>
       <body className={`${poppins.variable} ${inter.variable} bg-base text-white antialiased font-sans`}>
         <Navbar />
         <div className="pt-20">{children}</div>

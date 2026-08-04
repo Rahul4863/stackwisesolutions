@@ -23,6 +23,12 @@ export default function sitemap() {
       changeFrequency: "monthly",
       priority: 0.9,
     },
+    {
+      url: `${SITE_INFO.baseUrl}/services`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
   ];
 
   const serviceRoutes = SERVICES.map((s) => ({
