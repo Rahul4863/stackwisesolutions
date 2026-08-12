@@ -11,7 +11,7 @@
   --color-base: 247 243 235;      /* page background — warm ivory, not pure white */
   --color-panel: 255 255 255;
   --color-panel2: 238 231 216;    /* soft sand tint for alternating sections */
-  --color-white: 30 26 20;        /* primary foreground text (dark espresso, on light bg) */
+  --color-white: 255 255 255;     /* pure white for bg-white & text-white */
   --color-muted: 105 96 84;       /* secondary text */
   --color-gold: 176 122 41;       /* brass accent */
   --color-goldlight: 201 152 70;

@@ -2,16 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 
-/**
- * Reveal
- * Lightweight scroll-triggered fade/slide-in wrapper.
- * No extra dependency — just IntersectionObserver + CSS transitions,
- * consistent with the existing SkillBar / StatItem animation pattern.
- *
- * Usage:
- *   <Reveal><h2>Title</h2></Reveal>
- *   <Reveal direction="left" delay={120}>...</Reveal>
- */
 export default function Reveal({
   children,
   className = "",

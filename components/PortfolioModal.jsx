@@ -98,7 +98,7 @@ export default function PortfolioModal({ item, onClose, onPrev, onNext }) {
 
           <div className="p-8">
             <div className="bg-panel2 rounded-xl p-5 mb-6 border border-white/5">
-              <h3 className="text-white font-display font-semibold mb-3">Project Information</h3>
+              <h3 className="text-[#1a1611] font-display font-bold mb-3">Project Information</h3>
               <div className="border-t border-white/10 mb-3" />
               {[
                 ["Category", item.cat.charAt(0).toUpperCase() + item.cat.slice(1)],
@@ -107,12 +107,12 @@ export default function PortfolioModal({ item, onClose, onPrev, onNext }) {
               ].map(([k, v]) => (
                 <div key={k} className="flex justify-between text-sm py-1.5">
                   <span className="text-muted">{k}</span>
-                  <span className="text-white font-medium">{v}</span>
+                  <span className="text-[#1a1611] font-bold">{v}</span>
                 </div>
               ))}
             </div>
 
-            <h2 className="text-2xl font-display font-bold text-white mb-3">{detail.title}</h2>
+            <h2 className="text-2xl font-display font-bold text-[#1a1611] mb-3">{detail.title}</h2>
             <ul className="space-y-2 mb-4">
               {(Array.isArray(detail.description) ? detail.description : [detail.description]).map(
                 (point, i) => (

@@ -57,7 +57,7 @@ function ServiceRow({ s, index }) {
         </div>
       </div>
 
-      <h2 className="text-2xl font-display font-bold text-white">{s.title}</h2>
+      <h2 className="text-2xl font-display font-bold text-[#1a1611]">{s.title}</h2>
       <p className="text-muted mt-3 leading-relaxed">{s.desc}</p>
 
       <ul className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5">
@@ -139,7 +139,7 @@ export default function ServicesList() {
             }}
           />
           <div className="relative z-10">
-            <h3 className="text-white font-display font-bold text-xl mb-2">
+            <h3 className="text-[#1a1611] font-display font-bold text-xl mb-2">
               Not sure which service you need?
             </h3>
             <p className="text-muted text-sm mb-6 max-w-md mx-auto">

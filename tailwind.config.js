@@ -21,7 +21,7 @@ module.exports = {
         gold: "rgb(var(--color-gold) / <alpha-value>)",
         goldlight: "rgb(var(--color-goldlight) / <alpha-value>)",
         muted: "rgb(var(--color-muted) / <alpha-value>)",
-        white: "rgb(var(--color-white) / <alpha-value>)",
+        white: "#ffffff",
       },
       fontFamily: {
         display: ["var(--font-display)", "sans-serif"],

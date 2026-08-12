@@ -53,7 +53,7 @@ export default function Contact() {
   };
 
   const inputClass =
-    "w-full bg-panel2 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-muted/60 focus:outline-none focus:border-gold transition";
+    "w-full bg-white border border-amber-900/15 rounded-lg px-4 py-3 text-sm text-[#1a1611] placeholder-muted/60 focus:outline-none focus:border-gold transition";
 
   return (
     <section id="contact" className="py-24 px-6 sm:px-10 lg:px-16 2xl:px-24">
@@ -77,7 +77,7 @@ export default function Contact() {
                 {icon}
               </div>
               <div>
-                <h3 className="text-white font-medium">{title}</h3>
+                <h3 className="text-[#1a1611] font-bold">{title}</h3>
                 <p className="text-muted text-sm">{val}</p>
               </div>
             </div>

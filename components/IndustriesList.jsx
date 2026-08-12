@@ -29,7 +29,7 @@ export default function IndustriesList() {
               <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center mb-4 group-hover:bg-gold/20 transition">
                 <Icon size={22} className="text-gold" />
               </div>
-              <h2 className="text-white font-display font-semibold">
+              <h2 className="text-[#1a1611] font-display font-bold text-lg">
                 {ind.title}
               </h2>
               <p className="text-gold text-xs font-medium mt-1">{ind.tagline}</p>
@@ -58,7 +58,7 @@ export default function IndustriesList() {
           }}
         />
         <div className="relative z-10">
-          <h3 className="text-white font-display font-bold text-xl mb-2">
+          <h3 className="text-[#1a1611] font-display font-bold text-xl mb-2">
             Don't see your industry listed?
           </h3>
           <p className="text-muted text-sm mb-6 max-w-md mx-auto">

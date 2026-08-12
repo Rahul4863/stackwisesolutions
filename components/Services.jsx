@@ -73,7 +73,7 @@ function ServiceCard({ s, index, onEnquire }) {
           </div>
         )}
 
-        <h4 className="text-white font-display font-semibold text-lg">{s.title}</h4>
+        <h4 className="text-[#1a1611] font-display font-bold text-lg">{s.title}</h4>
         <div
           className="text-xs font-medium mt-1 mb-2"
           style={{ color: `rgb(var(${accentVar}))` }}

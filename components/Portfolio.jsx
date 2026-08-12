@@ -81,7 +81,7 @@ export default function Portfolio() {
                 </div>
                 <div className="p-5">
                   <div className="text-gold text-xs uppercase tracking-wide">{item.cat}</div>
-                  <h4 className="text-white font-display font-semibold mt-1">{item.title}</h4>
+                  <h4 className="text-[#1a1611] font-display font-bold text-base mt-1">{item.title}</h4>
                   <p className="text-muted text-sm mt-1">{item.desc}</p>
                 </div>
               </div>

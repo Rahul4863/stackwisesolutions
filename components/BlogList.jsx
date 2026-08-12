@@ -74,7 +74,7 @@ export default function BlogList() {
               <span className="text-xs px-3 py-1 rounded-full bg-gold/10 text-gold border border-gold/20">
                 Featured · {featured.category}
               </span>
-              <h2 className="text-2xl sm:text-3xl font-display font-bold text-white mt-4 mb-3 group-hover:text-gold transition">
+              <h2 className="text-2xl sm:text-3xl font-display font-bold text-[#1a1611] mt-4 mb-3 group-hover:text-gold transition">
                 {featured.title}
               </h2>
               <p className="text-muted leading-relaxed max-w-xl mb-5">
@@ -127,7 +127,7 @@ export default function BlogList() {
               <div className="text-gold text-xs uppercase tracking-wide">
                 {post.category}
               </div>
-              <h3 className="text-white font-display font-semibold mt-2 group-hover:text-gold transition">
+              <h3 className="text-[#1a1611] font-display font-bold mt-2 group-hover:text-gold transition">
                 {post.title}
               </h3>
               <p className="text-muted text-sm mt-2 flex-1">{post.excerpt}</p>

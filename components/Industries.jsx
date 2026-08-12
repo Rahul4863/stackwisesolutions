@@ -45,7 +45,7 @@ export default function Industries() {
                 className="group bg-panel border border-white/5 rounded-2xl p-6 hover:border-gold/40 hover:-translate-y-1 transition flex flex-col h-full"
               >
                 <Icon size={26} className="text-gold mb-4" />
-                <h4 className="text-white font-display font-semibold group-hover:text-gold transition">
+                <h4 className="text-[#1a1611] font-display font-bold text-lg group-hover:text-gold transition">
                   {ind.title}
                 </h4>
                 <p className="text-muted text-sm mt-2 flex-1">{ind.desc}</p>

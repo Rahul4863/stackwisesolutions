@@ -24,7 +24,7 @@ function FaqItem({ q, a }) {
         onClick={() => setOpen((o) => !o)}
         className="w-full flex items-center justify-between gap-4 text-left px-5 py-4"
       >
-        <span className="text-white text-sm font-medium">{q}</span>
+        <span className="text-[#1a1611] text-sm font-bold">{q}</span>
         <span
           className={`w-6 h-6 rounded-full bg-gold/10 text-gold text-sm shrink-0 flex items-center justify-center transition-transform ${
             open ? "rotate-45" : ""
@@ -68,7 +68,7 @@ export default function IndustryDetailContent({ slug }) {
           <span>/</span>
           <Link href="/industries" className="hover:text-gold transition">Industries</Link>
           <span>/</span>
-          <span className="text-white">{industry.title}</span>
+          <span className="text-[#1a1611] font-semibold">{industry.title}</span>
         </div>
 
         {/* Header banner */}
@@ -90,7 +90,7 @@ export default function IndustryDetailContent({ slug }) {
                 </div>
                 <div>
                   <div className="text-gold text-sm font-medium mb-1">{industry.tagline}</div>
-                  <h1 className="text-3xl sm:text-4xl font-display font-bold text-white">
+                  <h1 className="text-3xl sm:text-4xl font-display font-bold text-[#1a1611]">
                     {industry.title}
                   </h1>
                 </div>
@@ -107,7 +107,7 @@ export default function IndustryDetailContent({ slug }) {
                 </button>
                 <a
                   href={`mailto:${SITE_INFO.email}`}
-                  className="px-6 py-3 rounded-full border border-white/15 text-white font-semibold hover:border-gold hover:text-gold transition"
+                  className="px-6 py-3 rounded-full border border-amber-900/15 text-[#1a1611] font-semibold hover:border-gold hover:text-gold transition"
                 >
                   Email Us
                 </a>
@@ -133,7 +133,7 @@ export default function IndustryDetailContent({ slug }) {
             {/* Challenges */}
             {industry.challenges && (
               <>
-                <h2 className="text-white font-display font-semibold text-lg mb-4">
+                <h2 className="text-[#1a1611] font-display font-bold text-xl mb-4">
                   Challenges businesses in {industry.title.toLowerCase()} face
                 </h2>
                 <div className="divide-y divide-white/5 border-t border-b border-white/5 mb-12">
@@ -152,7 +152,7 @@ export default function IndustryDetailContent({ slug }) {
             {/* Solutions */}
             {industry.solutions && (
               <>
-                <h2 className="text-white font-display font-semibold text-lg mb-4">
+                <h2 className="text-[#1a1611] font-display font-bold text-xl mb-4">
                   How {SITE_INFO.shortName} solves this
                 </h2>
                 <div className="grid sm:grid-cols-2 gap-3 mb-12">
@@ -172,7 +172,7 @@ export default function IndustryDetailContent({ slug }) {
             {/* Use cases */}
             {industry.useCases && (
               <>
-                <h2 className="text-white font-display font-semibold text-lg mb-4">
+                <h2 className="text-[#1a1611] font-display font-bold text-xl mb-4">
                   What we build
                 </h2>
                 <div className="flex flex-wrap gap-2 mb-12">
@@ -191,7 +191,7 @@ export default function IndustryDetailContent({ slug }) {
             {/* Tools */}
             {industry.tools && (
               <>
-                <h2 className="text-white font-display font-semibold text-lg mb-4">
+                <h2 className="text-[#1a1611] font-display font-bold text-xl mb-4">
                   Tools & Technologies
                 </h2>
                 <div className="flex flex-wrap gap-2 mb-12">
@@ -210,7 +210,7 @@ export default function IndustryDetailContent({ slug }) {
             {/* Related services */}
             {relatedServices.length > 0 && (
               <>
-                <h2 className="text-white font-display font-semibold text-lg mb-4">
+                <h2 className="text-[#1a1611] font-display font-bold text-xl mb-4">
                   Services we typically use for this
                 </h2>
                 <div className="grid sm:grid-cols-2 gap-4 mb-12">
@@ -226,7 +226,7 @@ export default function IndustryDetailContent({ slug }) {
                           <SIcon size={16} />
                         </div>
                         <div>
-                          <div className="text-white text-sm font-medium group-hover:text-gold transition">
+                          <div className="text-[#1a1611] text-sm font-bold group-hover:text-gold transition">
                             {s.title}
                           </div>
                           <div className="text-muted text-xs mt-0.5 leading-relaxed">
@@ -243,11 +243,11 @@ export default function IndustryDetailContent({ slug }) {
             {/* Case highlight */}
             {casePortfolio && (
               <>
-                <h2 className="text-white font-display font-semibold text-lg mb-4">
+                <h2 className="text-[#1a1611] font-display font-bold text-xl mb-4">
                   Related work
                 </h2>
                 <div className="bg-panel border border-white/5 rounded-xl p-5 mb-12">
-                  <div className="text-white text-sm font-medium mb-1">
+                  <div className="text-[#1a1611] text-sm font-bold mb-1">
                     {industry.caseHighlight.title}
                   </div>
                   <p className="text-muted text-sm leading-relaxed mb-3">
@@ -270,7 +270,7 @@ export default function IndustryDetailContent({ slug }) {
             {/* FAQs */}
             {industry.faqs && (
               <>
-                <h2 className="text-white font-display font-semibold text-lg mb-4">
+                <h2 className="text-[#1a1611] font-display font-bold text-xl mb-4">
                   Frequently asked questions
                 </h2>
                 <div className="space-y-3 mb-12">
@@ -291,7 +291,7 @@ export default function IndustryDetailContent({ slug }) {
                   <span key={i}>★</span>
                 ))}
               </div>
-              <p className="text-white text-base leading-relaxed relative z-10">
+              <p className="text-[#1a1611] text-base leading-relaxed relative z-10 font-medium">
                 {testimonial.text}
               </p>
               <div className="flex items-center gap-3 mt-5 relative z-10">
@@ -299,7 +299,7 @@ export default function IndustryDetailContent({ slug }) {
                   {testimonial.initials}
                 </div>
                 <div>
-                  <div className="text-white text-sm font-medium">{testimonial.name}</div>
+                  <div className="text-[#1a1611] text-sm font-bold">{testimonial.name}</div>
                   <div className="text-muted text-xs">{testimonial.role}</div>
                 </div>
               </div>
@@ -308,7 +308,7 @@ export default function IndustryDetailContent({ slug }) {
 
           {/* Sticky snapshot card */}
           <div className="bg-gradient-to-br from-panel to-panel2 border border-gold/20 rounded-2xl p-6 h-fit md:sticky md:top-24">
-            <h3 className="text-white font-display font-semibold mb-4">
+            <h3 className="text-[#1a1611] font-display font-bold text-lg mb-4">
               Why {SITE_INFO.shortName}
             </h3>
             {[
@@ -318,7 +318,7 @@ export default function IndustryDetailContent({ slug }) {
             ].map(([k, v]) => (
               <div key={k} className="py-3 border-t border-white/10 first:border-t-0 first:pt-0">
                 <div className="text-muted text-xs uppercase tracking-wide mb-1">{k}</div>
-                <div className="text-white text-sm">{v}</div>
+                <div className="text-[#1a1611] text-sm font-semibold">{v}</div>
               </div>
             ))}
             <button
@@ -336,7 +336,7 @@ export default function IndustryDetailContent({ slug }) {
         {/* Related industries */}
         {otherIndustries.length > 0 && (
           <div className="mt-16 pt-10 border-t border-white/5">
-            <h2 className="text-white font-display font-semibold text-lg mb-6">
+            <h2 className="text-[#1a1611] font-display font-bold text-xl mb-6">
               Other Industries
             </h2>
             <div className="grid sm:grid-cols-3 gap-5">
@@ -361,7 +361,7 @@ export default function IndustryDetailContent({ slug }) {
                         <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center mb-3 group-hover:bg-gold/20 transition">
                           <OIcon size={20} className="text-gold" />
                         </div>
-                        <div className="text-white text-sm font-medium mb-1">{ind.title}</div>
+                        <div className="text-[#1a1611] text-sm font-bold mb-1">{ind.title}</div>
                         <div className="text-muted text-xs leading-relaxed">{ind.desc}</div>
                       </div>
                     </Link>
@@ -399,7 +399,7 @@ export default function IndustryDetailContent({ slug }) {
             }}
           />
           <div className="relative z-10">
-            <h3 className="text-white font-display font-bold text-xl mb-2">
+            <h3 className="text-[#1a1611] font-display font-bold text-xl mb-2">
               Building something in {industry.title.toLowerCase()}?
             </h3>
             <p className="text-muted text-sm mb-6 max-w-md mx-auto">

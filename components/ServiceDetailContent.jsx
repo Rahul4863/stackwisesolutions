@@ -1,11 +1,9 @@
 "use client";
-
 import { useState } from "react";
 import Link from "next/link";
 import { SERVICES, SITE_INFO, TESTIMONIALS } from "@/data/constants";
 import EnquiryModal from "./EnquiryModal";
 import Reveal from "./Reveal";
-
 function FaqItem({ q, a }) {
   const [open, setOpen] = useState(false);
   return (
@@ -18,7 +16,7 @@ function FaqItem({ q, a }) {
         onClick={() => setOpen((o) => !o)}
         className="w-full flex items-center justify-between gap-4 text-left px-5 py-4"
       >
-        <span className="text-white text-sm font-medium">{q}</span>
+        <span className="text-[#1a1611] text-sm font-bold">{q}</span>
         <span
           className={`w-6 h-6 rounded-full bg-gold/10 text-gold text-sm shrink-0 flex items-center justify-center transition-transform ${
             open ? "rotate-45" : ""
@@ -83,7 +81,7 @@ export default function ServiceDetailContent({ slug }) {
           <span>/</span>
           <Link href="/#services" className="hover:text-gold transition">Services</Link>
           <span>/</span>
-          <span className="text-white">{service.title}</span>
+          <span className="text-[#1a1611] font-semibold">{service.title}</span>
         </div>
 
         {/* Header banner */}
@@ -111,7 +109,7 @@ export default function ServiceDetailContent({ slug }) {
                 </div>
                 <div>
                   <div className="text-sm font-medium mb-1" style={{ color: accent }}>{service.tagline}</div>
-                  <h1 className="text-3xl sm:text-4xl font-display font-bold text-white">
+                  <h1 className="text-3xl sm:text-4xl font-display font-bold text-[#1a1611]">
                     {service.title}
                   </h1>
                 </div>
@@ -279,7 +277,7 @@ export default function ServiceDetailContent({ slug }) {
                 <div className="w-9 h-9 mx-auto rounded-full bg-gold/10 flex items-center justify-center text-base mb-2">
                   {icon}
                 </div>
-                <div className="text-white text-sm font-semibold">{val}</div>
+                <div className="text-[#1a1611] text-sm font-semibold">{val}</div>
                 <div className="text-muted text-xs mt-0.5">{label}</div>
               </div>
             </Reveal>
@@ -291,7 +289,7 @@ export default function ServiceDetailContent({ slug }) {
             {/* Overview — a longer, more detailed explanation of the service */}
             {service.overview && (
               <>
-                <h2 className="text-white font-display font-semibold text-lg mb-4">
+                <h2 className="text-[#1a1611] font-display font-bold text-xl mb-4">
                   How we approach {service.title.toLowerCase()}
                 </h2>
                 <p className="text-muted text-sm leading-relaxed mb-12">
@@ -301,7 +299,7 @@ export default function ServiceDetailContent({ slug }) {
             )}
 
             {/* What's included */}
-            <h2 className="text-white font-display font-semibold text-lg mb-4">
+            <h2 className="text-[#1a1611] font-display font-bold text-xl mb-4">
               What's included
             </h2>
             <div className="grid sm:grid-cols-2 gap-3 mb-12">
@@ -319,7 +317,7 @@ export default function ServiceDetailContent({ slug }) {
             {/* Why choose us for this service — numbered rows */}
             {service.benefits && (
               <>
-                <h2 className="text-white font-display font-semibold text-lg mb-4">
+                <h2 className="text-[#1a1611] font-display font-bold text-xl mb-4">
                   Why choose {SITE_INFO.shortName} for this
                 </h2>
                 <div className="divide-y divide-white/5 border-t border-b border-white/5 mb-12">
@@ -338,7 +336,7 @@ export default function ServiceDetailContent({ slug }) {
             {/* Ideal for */}
             {service.idealFor && (
               <>
-                <h2 className="text-white font-display font-semibold text-lg mb-4">
+                <h2 className="text-[#1a1611] font-display font-bold text-xl mb-4">
                   Who this is for
                 </h2>
                 <div className="flex flex-wrap gap-2 mb-12">
@@ -355,7 +353,7 @@ export default function ServiceDetailContent({ slug }) {
             )}
 
             {/* Tools */}
-            <h2 className="text-white font-display font-semibold text-lg mb-4">
+            <h2 className="text-[#1a1611] font-display font-bold text-xl mb-4">
               Tools & Technologies
             </h2>
             <div className="flex flex-wrap gap-2 mb-12">
@@ -370,7 +368,7 @@ export default function ServiceDetailContent({ slug }) {
             </div>
 
             {/* Process — horizontal stepper on desktop, list on mobile */}
-            <h2 className="text-white font-display font-semibold text-lg mb-6">
+            <h2 className="text-[#1a1611] font-display font-bold text-xl mb-6">
               How we work
             </h2>
 
@@ -406,7 +404,7 @@ export default function ServiceDetailContent({ slug }) {
             {/* What we need from you */}
             {service.kickoffChecklist && (
               <>
-                <h2 className="text-white font-display font-semibold text-lg mb-4">
+                <h2 className="text-[#1a1611] font-display font-bold text-xl mb-4">
                   What we need from you to get started
                 </h2>
                 <div className="bg-panel border border-white/5 rounded-xl p-5 mb-12">
@@ -427,7 +425,7 @@ export default function ServiceDetailContent({ slug }) {
             {/* FAQs */}
             {service.faqs && (
               <>
-                <h2 className="text-white font-display font-semibold text-lg mb-4">
+                <h2 className="text-[#1a1611] font-display font-bold text-xl mb-4">
                   Frequently asked questions
                 </h2>
                 <div className="space-y-3 mb-12">
@@ -448,7 +446,7 @@ export default function ServiceDetailContent({ slug }) {
                   <span key={i}>★</span>
                 ))}
               </div>
-              <p className="text-white text-base leading-relaxed relative z-10">
+              <p className="text-[#1a1611] text-base leading-relaxed relative z-10 font-medium">
                 {testimonial.text}
               </p>
               <div className="flex items-center gap-3 mt-5 relative z-10">
@@ -456,7 +454,7 @@ export default function ServiceDetailContent({ slug }) {
                   {testimonial.initials}
                 </div>
                 <div>
-                  <div className="text-white text-sm font-medium">{testimonial.name}</div>
+                  <div className="text-[#1a1611] text-sm font-bold">{testimonial.name}</div>
                   <div className="text-muted text-xs">{testimonial.role}</div>
                 </div>
               </div>
@@ -465,7 +463,7 @@ export default function ServiceDetailContent({ slug }) {
 
           {/* Sticky snapshot card */}
           <div className="bg-gradient-to-br from-panel to-panel2 border border-gold/20 rounded-2xl p-6 h-fit md:sticky md:top-24">
-            <h3 className="text-white font-display font-semibold mb-4">
+            <h3 className="text-[#1a1611] font-display font-bold text-lg mb-4">
               Project Snapshot
             </h3>
             {[
@@ -474,7 +472,7 @@ export default function ServiceDetailContent({ slug }) {
             ].map(([k, v]) => (
               <div key={k} className="py-3 border-t border-white/10 first:border-t-0 first:pt-0">
                 <div className="text-muted text-xs uppercase tracking-wide mb-1">{k}</div>
-                <div className="text-white text-sm">{v}</div>
+                <div className="text-[#1a1611] text-sm font-semibold">{v}</div>
               </div>
             ))}
             <button
@@ -492,7 +490,7 @@ export default function ServiceDetailContent({ slug }) {
         {/* Related services */}
         {otherServices.length > 0 && (
           <div className="mt-16 pt-10 border-t border-white/5">
-            <h2 className="text-white font-display font-semibold text-lg mb-6">
+            <h2 className="text-[#1a1611] font-display font-bold text-xl mb-6">
               Related Services
             </h2>
             <div className="grid sm:grid-cols-3 gap-5">
@@ -517,7 +515,7 @@ export default function ServiceDetailContent({ slug }) {
                         <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center mb-3 group-hover:bg-gold/20 transition">
                           <OIcon size={20} className="text-gold" />
                         </div>
-                        <div className="text-white text-sm font-medium mb-1">{s.title}</div>
+                        <div className="text-[#1a1611] text-sm font-bold mb-1">{s.title}</div>
                         <div className="text-muted text-xs leading-relaxed">{s.desc}</div>
                       </div>
                     </Link>
@@ -555,7 +553,7 @@ export default function ServiceDetailContent({ slug }) {
             }}
           />
           <div className="relative z-10">
-            <h3 className="text-white font-display font-bold text-xl mb-2">
+            <h3 className="text-[#1a1611] font-display font-bold text-xl mb-2">
               Ready to start your {service.title.toLowerCase()} project?
             </h3>
             <p className="text-muted text-sm mb-6 max-w-md mx-auto">

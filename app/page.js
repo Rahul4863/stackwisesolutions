@@ -2,7 +2,6 @@ import { SITE_INFO } from "@/data/constants";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Stats from "@/components/Stats";
-import Skills from "@/components/Skills";
 import Portfolio from "@/components/Portfolio";
 import Services from "@/components/Services";
 import Industries from "@/components/Industries";
@@ -46,7 +45,6 @@ export default function HomePage() {
       <Hero />
       <About />
       <Stats />
-      <Skills />
       <Portfolio />
       <Services />
       <Industries />

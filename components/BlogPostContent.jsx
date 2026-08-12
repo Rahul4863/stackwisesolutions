@@ -6,7 +6,6 @@ import Image from "next/image";
 import { BLOG_POSTS } from "@/data/blogs";
 import { SITE_INFO } from "@/data/constants";
 import EnquiryModal from "./EnquiryModal";
-
 function formatDate(dateStr) {
   return new Date(dateStr).toLocaleDateString("en-US", {
     month: "long",
@@ -14,13 +13,12 @@ function formatDate(dateStr) {
     year: "numeric",
   });
 }
-
 function ContentBlock({ block }) {
   if (block.type === "heading") {
     return (
       <h2
         id={block.id}
-        className="text-white font-display font-semibold text-xl sm:text-2xl mt-10 mb-4 scroll-mt-28"
+        className="text-[#1a1611] font-display font-bold text-xl sm:text-2xl mt-10 mb-4 scroll-mt-28"
       >
         {block.text}
       </h2>
@@ -100,7 +98,7 @@ export default function BlogPostContent({ slug }) {
           <span>/</span>
           <Link href="/blogs" className="hover:text-gold transition">Blog</Link>
           <span>/</span>
-          <span className="text-white truncate max-w-[200px]">{post.title}</span>
+          <span className="text-[#1a1611] font-semibold truncate max-w-[200px]">{post.title}</span>
         </div>
 
         {/* Header banner */}
@@ -118,7 +116,7 @@ export default function BlogPostContent({ slug }) {
             <span className="text-xs px-3 py-1 rounded-full bg-gold/10 text-gold border border-gold/20">
               {post.category}
             </span>
-            <h1 className="text-3xl sm:text-4xl font-display font-bold text-white mt-4 mb-5 max-w-3xl">
+            <h1 className="text-3xl sm:text-4xl font-display font-bold text-[#1a1611] mt-4 mb-5 max-w-3xl">
               {post.title}
             </h1>
             <div className="flex items-center gap-3">
@@ -126,7 +124,7 @@ export default function BlogPostContent({ slug }) {
                 {post.author.initials}
               </div>
               <div className="text-sm">
-                <div className="text-white font-medium">{post.author.name}</div>
+                <div className="text-[#1a1611] font-bold">{post.author.name}</div>
                 <div className="text-muted text-xs">
                   {formatDate(post.date)} · {post.readTime}
                 </div>
@@ -156,7 +154,7 @@ export default function BlogPostContent({ slug }) {
 
             {/* Bottom CTA */}
             <div className="relative overflow-hidden mt-10 bg-gradient-to-br from-panel to-panel2 border border-gold/20 rounded-2xl p-8 text-center">
-              <h3 className="text-white font-display font-bold text-xl mb-2">
+              <h3 className="text-[#1a1611] font-display font-bold text-xl mb-2">
                 Have a project like this in mind?
               </h3>
               <p className="text-muted text-sm mb-6 max-w-md mx-auto">
@@ -175,7 +173,7 @@ export default function BlogPostContent({ slug }) {
           <div className="space-y-6 h-fit lg:sticky lg:top-24">
             {toc.length > 0 && (
               <div className="bg-panel border border-white/5 rounded-2xl p-5">
-                <h3 className="text-white text-sm font-semibold mb-3">
+                <h3 className="text-[#1a1611] text-sm font-bold mb-3">
                   On this page
                 </h3>
                 <nav className="space-y-2">
@@ -194,7 +192,7 @@ export default function BlogPostContent({ slug }) {
 
             {latestPosts.length > 0 && (
               <div className="bg-panel border border-white/5 rounded-2xl p-5">
-                <h3 className="text-white text-sm font-semibold mb-4">Latest Posts</h3>
+                <h3 className="text-[#1a1611] text-sm font-bold mb-4">Latest Posts</h3>
                 <div className="space-y-4">
                   {latestPosts.map((p) => (
                     <Link
@@ -212,7 +210,7 @@ export default function BlogPostContent({ slug }) {
                         />
                       </div>
                       <div className="min-w-0">
-                        <div className="text-white text-sm font-medium leading-snug line-clamp-2 group-hover:text-gold transition">
+                        <div className="text-[#1a1611] text-sm font-bold leading-snug line-clamp-2 group-hover:text-gold transition">
                           {p.title}
                         </div>
                         <div className="text-muted text-xs mt-1">{formatDate(p.date)}</div>
@@ -224,7 +222,7 @@ export default function BlogPostContent({ slug }) {
             )}
 
             <div className="bg-panel border border-white/5 rounded-2xl p-5">
-              <h3 className="text-white text-sm font-semibold mb-3">Share this post</h3>
+              <h3 className="text-[#1a1611] text-sm font-bold mb-3">Share this post</h3>
               <div className="flex gap-2">
                 <a
                   href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(post.title)}`}
@@ -252,7 +250,7 @@ export default function BlogPostContent({ slug }) {
             </div>
 
             <div className="bg-gradient-to-br from-panel to-panel2 border border-gold/20 rounded-2xl p-5">
-              <h3 className="text-white text-sm font-semibold mb-2">
+              <h3 className="text-[#1a1611] text-sm font-bold mb-2">
                 Need help with this?
               </h3>
               <p className="text-muted text-xs leading-relaxed mb-4">
@@ -271,7 +269,7 @@ export default function BlogPostContent({ slug }) {
         {/* Related posts */}
         {related.length > 0 && (
           <div className="mt-16 pt-10 border-t border-white/5">
-            <h2 className="text-white font-display font-semibold text-lg mb-6">
+            <h2 className="text-[#1a1611] font-display font-bold text-lg mb-6">
               Related Posts
             </h2>
             <div className="grid sm:grid-cols-3 gap-5">
@@ -294,7 +292,7 @@ export default function BlogPostContent({ slug }) {
                     </span>
                   </div>
                   <div className="p-4">
-                    <div className="text-white text-sm font-medium mb-1 group-hover:text-gold transition">
+                    <div className="text-[#1a1611] text-sm font-bold mb-1 group-hover:text-gold transition">
                       {p.title}
                     </div>
                     <div className="text-muted text-xs">{formatDate(p.date)}</div>
