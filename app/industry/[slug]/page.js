@@ -8,6 +8,8 @@ export async function generateStaticParams() {
   return INDUSTRIES.map((i) => ({ slug: i.slug }));
 }
 
+export const dynamicParams = false;
+
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const industry = INDUSTRIES.find((i) => i.slug === slug);

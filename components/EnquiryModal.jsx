@@ -274,7 +274,7 @@ export default function EnquiryModal({ service, onClose }) {
   };
 
   const inputClass =
-    "w-full bg-panel2 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-muted/60 focus:outline-none focus:border-gold transition";
+    "w-full bg-base border border-amber-900/15 rounded-xl px-4 py-3 text-sm text-[#1a1611] placeholder-muted/70 focus:outline-none focus:border-gold transition";
 
   const Icon = service.icon;
 
@@ -284,11 +284,11 @@ export default function EnquiryModal({ service, onClose }) {
       onClick={onClose}
     >
       <div
-        className="bg-panel rounded-2xl w-full max-w-md relative border border-white/5"
+        className="bg-panel rounded-3xl w-full max-w-md relative border border-amber-900/15 shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         <button
-          className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center"
+          className="absolute top-4 right-4 w-9 h-9 rounded-full bg-base text-[#1a1611] hover:bg-gold hover:text-ink flex items-center justify-center font-bold transition"
           onClick={onClose}
         >
           ✕
@@ -296,22 +296,22 @@ export default function EnquiryModal({ service, onClose }) {
         <div className="p-8">
           <div className="flex items-center gap-3 mb-1">
             {Icon && (
-              <div className="w-10 h-10 rounded-xl bg-gold/10 text-gold flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-gold/15 text-gold flex items-center justify-center shrink-0">
                 <Icon size={18} />
               </div>
             )}
-            <div className="text-gold text-xs uppercase tracking-wide font-medium">
+            <div className="text-gold text-xs uppercase tracking-wide font-bold">
               Enquire about
             </div>
           </div>
-          <h3 className="text-xl font-display font-bold text-white mb-5">
+          <h3 className="text-xl font-display font-bold text-[#1a1611] mb-5">
             {service.title}
           </h3>
 
           {sent ? (
             <div className="text-center py-6">
               <div className="text-4xl mb-3">✅</div>
-              <p className="text-white font-medium mb-1">Enquiry sent!</p>
+              <p className="text-[#1a1611] font-bold mb-1">Enquiry sent!</p>
               <p className="text-muted text-sm">
                 Thanks for reaching out. Our team will get back to you within 24 hours.
               </p>

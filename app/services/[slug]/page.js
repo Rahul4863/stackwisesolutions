@@ -2,11 +2,12 @@ import { notFound } from "next/navigation";
 import { SERVICES, SITE_INFO } from "@/data/constants";
 import ServiceDetailContent from "@/components/ServiceDetailContent";
 
-// Pre-render every service page at build time (SSG) for fast, fully
-// crawlable HTML.
+// Explicit route directories exist for all 8 core services under app/services/
 export async function generateStaticParams() {
-  return SERVICES.map((s) => ({ slug: s.slug }));
+  return [];
 }
+
+export const dynamicParams = true;
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;

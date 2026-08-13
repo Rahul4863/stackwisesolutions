@@ -4,6 +4,7 @@ import About from "@/components/About";
 import Stats from "@/components/Stats";
 import Portfolio from "@/components/Portfolio";
 import Services from "@/components/Services";
+import WorkProcess from "@/components/WorkProcess";
 import Industries from "@/components/Industries";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
@@ -47,6 +48,7 @@ export default function HomePage() {
       <Stats />
       <Portfolio />
       <Services />
+      <WorkProcess />
       <Industries />
       <Testimonials />
       <Contact />

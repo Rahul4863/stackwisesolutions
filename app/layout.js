@@ -71,7 +71,7 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${poppins.variable} ${inter.variable} bg-base text-white antialiased font-sans`}>
+      <body className={`${poppins.variable} ${inter.variable} bg-base text-[#1a1611] antialiased font-sans`}>
         <Navbar />
         <div className="pt-20">{children}</div>
         <Footer />

@@ -35,19 +35,19 @@ export default function PortfolioModal({ item, onClose, onPrev, onNext }) {
         onClick={(e) => e.stopPropagation()}
       >
         <button
-          className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center z-10"
+          className="absolute top-4 right-4 w-9 h-9 rounded-full bg-base text-[#1a1611] hover:bg-gold hover:text-ink flex items-center justify-center font-bold z-10 transition shadow-sm"
           onClick={onClose}
         >
           ✕
         </button>
         <button
-          className="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-xl z-10"
+          className="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-base text-[#1a1611] hover:bg-gold hover:text-ink flex items-center justify-center text-xl font-bold z-10 transition shadow-sm"
           onClick={onPrev}
         >
           ‹
         </button>
         <button
-          className="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-xl z-10"
+          className="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-base text-[#1a1611] hover:bg-gold hover:text-ink flex items-center justify-center text-xl font-bold z-10 transition shadow-sm"
           onClick={onNext}
         >
           ›
