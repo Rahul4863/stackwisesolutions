@@ -29,6 +29,12 @@ export default function sitemap() {
       changeFrequency: "monthly",
       priority: 0.9,
     },
+    {
+      url: `${SITE_INFO.baseUrl}/portfolio`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
   ];
 
   const serviceRoutes = SERVICES.map((s) => ({

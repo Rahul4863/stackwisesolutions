@@ -105,12 +105,9 @@ export const STATS = [
   { icon: FaBriefcase, num: 15, label: "Projects Delivered" },
   { icon: FaSmile, num: 12, label: "Happy Clients" },
   { icon: FaTools, num: 20, label: "Technologies Used" },
-];
-
-export const CATEGORY_TYPES = {
+];export const CATEGORY_TYPES = {
   ALL: "all",
   WEB: "web",
-  MOBILE: "mobile",
   AI: "ai",
 };
 
@@ -118,36 +115,90 @@ export const PORTFOLIO_ITEMS = [
   {
     id: 1,
     cat: CATEGORY_TYPES.WEB,
+    categoryLabel: "Web Platform",
     title: "Food Delivery Platform",
-    desc: "Multi-dashboard food delivery system with live order tracking",
+    tagline: "Multi-Dashboard Realtime Delivery System",
+    desc: "Multi-dashboard food delivery system with live order tracking, dedicated portals for customers, delivery partners, restaurants, and administrators.",
     emoji: "🍔",
-    image: "https://picsum.photos/seed/food-delivery-app/800/600",
+    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=900&h=650&fit=crop&auto=format&q=80",
+    featured: true,
+    badge: "Full-Stack Web",
+    clientType: "In-house Product",
+    year: "2024 – 2025",
+    metrics: [
+      { label: "Dashboards", value: "4 Roles" },
+      { label: "Order Tracking", value: "Realtime" },
+      { label: "Payment", value: "Razorpay" },
+    ],
+    impactHighlight: "⚡ Real-time Order Tracking & Razorpay Gateway",
+    stack: ["React.js", "Node.js", "Express.js", "MongoDB", "Socket.io", "Razorpay", "Tailwind CSS"],
+    demoUrl: "https://stackwisesolutions.com",
+    githubUrl: "https://github.com",
   },
   {
     id: 2,
     cat: CATEGORY_TYPES.AI,
+    categoryLabel: "AI & Full-Stack",
     title: "AI-Powered YouTube Clone",
-    desc: "Full-stack video streaming platform with AI title/tag generation",
+    tagline: "Full-Stack Video Streaming & AI Tagging Engine",
+    desc: "Full-stack video streaming platform with AI title/tag generation, Shorts vertical feed, creator analytics, and adaptive playback.",
     emoji: "▶️",
-    image: "https://picsum.photos/seed/video-streaming-app/800/600",
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=900&h=650&fit=crop&auto=format&q=80",
+    featured: true,
+    badge: "AI Integration",
+    clientType: "Product Showcase",
+    year: "2025",
+    metrics: [
+      { label: "AI Integration", value: "OpenAI" },
+      { label: "Video Format", value: "Adaptive" },
+      { label: "Feed Style", value: "Shorts UI" },
+    ],
+    impactHighlight: "🤖 OpenAI Auto Title & Tag Generation Engine",
+    stack: ["React.js", "Node.js", "MongoDB", "OpenAI API", "Express.js", "Tailwind CSS"],
+    demoUrl: "https://stackwisesolutions.com",
+    githubUrl: "https://github.com",
   },
   {
     id: 3,
     cat: CATEGORY_TYPES.WEB,
+    categoryLabel: "Enterprise Web",
     title: "School Management System",
-    desc: "Multi-role academic platform for students, teachers & admins",
+    tagline: "Multi-Role Academic & Administrative Suite",
+    desc: "Multi-role academic platform for students, teachers & admins with secure JWT authentication and scalable backend schemas.",
     emoji: "🏫",
-    image: "https://picsum.photos/seed/school-management-app/800/600",
+    image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=900&h=650&fit=crop&auto=format&q=80",
+    featured: false,
+    badge: "Enterprise Suite",
+    clientType: "Client Project",
+    year: "2023 – 2024",
+    metrics: [
+      { label: "Access Control", value: "JWT Auth" },
+      { label: "Architecture", value: "Multi-Role" },
+      { label: "Database", value: "MongoDB" },
+    ],
+    impactHighlight: "🎓 Multi-Role Portals & High-Security JWT Routing",
+    stack: ["Node.js", "Express.js", "MongoDB", "React.js", "JWT", "Tailwind CSS"],
+    demoUrl: "https://stackwisesolutions.com",
+    githubUrl: "https://github.com",
   },
 ];
 
 export const PORTFOLIO_DETAILS = {
   1: {
+    id: 1,
     title: "Food Delivery Platform",
     cat: "web",
+    categoryLabel: "Web Platform",
     client: "In-house Product",
     date: "2024 – 2025",
-    url: "—",
+    url: "https://stackwisesolutions.com",
+    github: "https://github.com",
+    overview:
+      "A complete food delivery platform built with dedicated dashboards for customers, delivery partners, restaurants, and administrators with real-time tracking.",
+    challenge:
+      "Managing synchronized state across 4 distinct user roles while keeping order updates instantaneous without page reloads.",
+    solution:
+      "Implemented a real-time event-driven architecture using Socket.io and Google Maps API for smooth live location streaming.",
     description: [
       "Built a complete food delivery platform with dedicated dashboards for customers, delivery partners, restaurants, and administrators.",
       "Integrated Razorpay payment gateway for secure online transactions.",
@@ -155,14 +206,39 @@ export const PORTFOLIO_DETAILS = {
       "Built a responsive UI with Tailwind CSS.",
     ],
     images: ["🍔", "🛵", "🗺️", "💳"],
+    gallery: [
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1000&h=700&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=1000&h=700&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000&h=700&fit=crop&auto=format&q=80",
+    ],
     stack: ["React.js", "Node.js", "Express.js", "MongoDB", "Socket.io", "Razorpay", "Tailwind CSS"],
+    metrics: [
+      { label: "Dashboards", value: "4 Roles" },
+      { label: "Tracking", value: "Realtime" },
+      { label: "Payment", value: "Razorpay" },
+    ],
+    testimonial: {
+      quote: "The multi-dashboard architecture and real-time live map tracking make order operations effortless and crystal clear.",
+      author: "Product Team",
+      role: "Lead Engineer",
+      rating: 5,
+    },
   },
   2: {
+    id: 2,
     title: "AI-Powered YouTube Clone",
     cat: "ai",
+    categoryLabel: "AI & Full-Stack",
     client: "Product Showcase",
     date: "2025",
-    url: "—",
+    url: "https://stackwisesolutions.com",
+    github: "https://github.com",
+    overview:
+      "A full-stack video streaming application enhanced with OpenAI API to auto-generate video titles, tags, and descriptions.",
+    challenge:
+      "Video creators needed automated metadata generation and adaptive playback without sacrificing interface responsiveness.",
+    solution:
+      "Integrated OpenAI GPT models for smart title/tag suggestions and engineered custom video player components with a modern Shorts feed.",
     description: [
       "Engineered a full-stack video streaming platform supporting video uploads, thumbnail generation, and adaptive playback.",
       "Integrated OpenAI API to auto-generate video titles and tags, improving content discoverability.",
@@ -171,14 +247,39 @@ export const PORTFOLIO_DETAILS = {
       "Built a Shorts-style vertical video feed.",
     ],
     images: ["▶️", "🤖", "📊", "🎬"],
+    gallery: [
+      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1000&h=700&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1000&h=700&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=1000&h=700&fit=crop&auto=format&q=80",
+    ],
     stack: ["React.js", "Node.js", "MongoDB", "OpenAI API", "Express.js", "Tailwind CSS"],
+    metrics: [
+      { label: "AI Engine", value: "OpenAI" },
+      { label: "Content", value: "Videos & Shorts" },
+      { label: "Features", value: "Creator Hub" },
+    ],
+    testimonial: {
+      quote: "Automating metadata with OpenAI combined with a modern video player makes this a standout full-stack build.",
+      author: "Creator Community",
+      role: "Platform Review",
+      rating: 5,
+    },
   },
   3: {
+    id: 3,
     title: "School Management System",
     cat: "web",
+    categoryLabel: "Enterprise Web",
     client: "Client Project",
     date: "2023 – 2024",
-    url: "—",
+    url: "https://stackwisesolutions.com",
+    github: "https://github.com",
+    overview:
+      "A multi-role school management system designed for students, teachers, and school administrators with comprehensive role-based access control.",
+    challenge:
+      "Maintaining strict role-based data isolation and fast querying across thousands of student academic and financial records.",
+    solution:
+      "Built a scalable Node.js/Express backend with JWT authentication, fine-grained access control, and optimized MongoDB schemas.",
     description: [
       "Developed a multi-role school management platform supporting students, teachers, and school administrators.",
       "Implemented JWT authentication, access control, and secure API routing to protect sensitive academic data.",
@@ -186,7 +287,23 @@ export const PORTFOLIO_DETAILS = {
       "Designed a responsive front-end interface supporting multi-role access and usability across devices.",
     ],
     images: ["🏫", "📚", "🗂️", "✅"],
-    stack: ["Node.js", "Express.js", "MongoDB", "React.js", "JWT"],
+    gallery: [
+      "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=1000&h=700&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1000&h=700&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1000&h=700&fit=crop&auto=format&q=80",
+    ],
+    stack: ["Node.js", "Express.js", "MongoDB", "React.js", "JWT", "Tailwind CSS"],
+    metrics: [
+      { label: "Roles", value: "Admin, Teacher, Student" },
+      { label: "Security", value: "JWT Auth" },
+      { label: "Stack", value: "MERN" },
+    ],
+    testimonial: {
+      quote: "The role-based permission system and responsive layout made academic management seamless across our institution.",
+      author: "Client Administrator",
+      role: "Academic Operations",
+      rating: 5,
+    },
   },
 };
 
@@ -683,7 +800,7 @@ export const INDUSTRIES = [
   },
   {
     slug: "food-restaurant",
-    image: "https://picsum.photos/seed/food-restaurant/900/650",
+    image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=900&h=650&fit=crop&auto=format&q=80",
     icon: FaUtensils,
     title: "Food & Restaurant",
     tagline: "Ordering & delivery platforms that scale",
@@ -875,7 +992,7 @@ export const INDUSTRIES = [
   },
   {
     slug: "travel-hospitality",
-    image: "https://picsum.photos/seed/travel-hospitality/900/650",
+    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900&h=650&fit=crop&auto=format&q=80",
     icon: FaPlane,
     title: "Travel & Hospitality",
     tagline: "Booking experiences guests trust",
@@ -919,7 +1036,7 @@ export const INDUSTRIES = [
   },
   {
     slug: "logistics-transportation",
-    image: "https://picsum.photos/seed/logistics-transportation/900/650",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=900&h=650&fit=crop&auto=format&q=80",
     icon: FaTruck,
     title: "Logistics & Transportation",
     tagline: "Live tracking & fleet visibility",
@@ -968,7 +1085,7 @@ export const INDUSTRIES = [
   },
   {
     slug: "fintech-finance",
-    image: "https://picsum.photos/seed/fintech-finance/900/650",
+    image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=900&h=650&fit=crop&auto=format&q=80",
     icon: FaCoins,
     title: "FinTech & Finance",
     tagline: "Secure, compliant financial products",
@@ -1012,7 +1129,7 @@ export const INDUSTRIES = [
   },
   {
     slug: "media-entertainment",
-    image: "https://picsum.photos/seed/media-entertainment/900/650",
+    image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=900&h=650&fit=crop&auto=format&q=80",
     icon: FaFilm,
     title: "Media & Entertainment",
     tagline: "Streaming & content platforms",
