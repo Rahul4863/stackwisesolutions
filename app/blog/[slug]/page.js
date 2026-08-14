@@ -2,11 +2,9 @@ import { notFound } from "next/navigation";
 import { BLOG_POSTS } from "@/data/blogs";
 import { SITE_INFO } from "@/data/constants";
 import BlogPostContent from "@/components/BlogPostContent";
-
 export async function generateStaticParams() {
   return BLOG_POSTS.map((p) => ({ slug: p.slug }));
 }
-
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const post = BLOG_POSTS.find((p) => p.slug === slug);
@@ -86,6 +84,22 @@ export default async function BlogPostPage({ params }) {
     ],
   };
 
+  const faqJsonLd =
+    post.faqs && post.faqs.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: post.faqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: f.a,
+            },
+          })),
+        }
+      : null;
+
   return (
     <>
       <script
@@ -96,6 +110,12 @@ export default async function BlogPostPage({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
       <BlogPostContent slug={post.slug} />
     </>
   );

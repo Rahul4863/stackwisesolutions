@@ -1,21 +1,10 @@
-import Link from "next/link";
-
+import NotFoundContent from "@/components/NotFoundContent";
+import { SITE_INFO } from "@/data/constants";
 export const metadata = {
-  title: "Page Not Found",
+  title: "404 — Page Not Found",
+  description: `The page you are looking for doesn't exist or has moved. Explore ${SITE_INFO.name}'s web development, mobile apps, and engineering solutions.`,
   robots: { index: false, follow: false },
 };
 export default function NotFound() {
-  return (
-    <section className="py-28 px-6 sm:px-10 lg:px-16 2xl:px-24 text-center min-h-[60vh] flex flex-col items-center justify-center">
-      <h1 className="text-2xl font-display font-bold text-[#1a1611] mb-3">
-        Page not found
-      </h1>
-      <p className="text-muted mb-6 max-w-md">
-        The page you're looking for doesn't exist or may have moved.
-      </p>
-      <Link href="/" className="text-gold font-medium hover:underline">
-        ← Back to Home
-      </Link>
-    </section>
-  );
+  return <NotFoundContent />;
 }

@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import Link from "next/link";
 import {
@@ -37,10 +36,6 @@ import {
 import { SERVICES, SITE_INFO, TESTIMONIALS } from "@/data/constants";
 import EnquiryModal from "./EnquiryModal";
 import Reveal from "./Reveal";
-
-/* =========================================================================
-   IMAGE LIGHTBOX MODAL COMPONENT
-   ========================================================================= */
 function ImageLightbox({ src, alt, onClose }) {
   if (!src) return null;
   return (

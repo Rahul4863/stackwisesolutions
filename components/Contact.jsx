@@ -71,7 +71,6 @@ export default function Contact() {
       subject: f.subject ? f.subject : `Inquiry regarding ${serviceName}`,
     }));
   };
-
   const validate = () => {
     let err = {};
     if (!formData.name.trim()) err.name = "Your name is required";
@@ -88,7 +87,6 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     if (e) e.preventDefault();
     if (!validate()) return;
-
     try {
       setLoading(true);
       const res = await fetch(
