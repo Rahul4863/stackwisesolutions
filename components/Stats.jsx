@@ -70,7 +70,7 @@ function StatCard({ item }) {
         </div>
 
         {/* Label & Description */}
-        <h3 className="text-base sm:text-lg font-bold text-[#1a1611] mb-1">
+        <h3 className="text-black text-base sm:text-lg mt-4 leading-relaxed font-semibold">
           {item.label}
         </h3>
         <p className="text-xs sm:text-sm text-[#594f42] leading-relaxed font-medium">
@@ -119,7 +119,7 @@ export default function Stats() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-[#1a1611] leading-tight">
             Measurable Milestones Driven by <span className="shimmer-text">Engineering Rigor</span>
           </h2>
-          <p className="text-base sm:text-lg text-[#594f42] mt-3 leading-relaxed">
+          <p className="text-black text-base sm:text-lg mt-4 leading-relaxed font-semibold">
             Quantifiable performance metrics achieved across enterprise web applications, mobile platforms, and digital growth campaigns.
           </p>
         </Reveal>

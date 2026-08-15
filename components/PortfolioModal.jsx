@@ -7,7 +7,6 @@ import {
   ChevronLeft,
   ChevronRight,
   ExternalLink,
-  Github,
   Sparkles,
   CheckCircle2,
   TrendingUp,
@@ -17,11 +16,38 @@ import {
   Layers,
   ArrowRight,
 } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 import { PORTFOLIO_DETAILS } from "@/data/constants";
 
 export default function PortfolioModal({ item, onClose, onPrev, onNext, onOpenEnquiry }) {
   const [slideIdx, setSlideIdx] = useState(0);
+
+  useEffect(() => {
+    const originalStyle = window.getComputedStyle(document.body).overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = originalStyle;
+    };
+  }, []);
+
+  useEffect(() => {
+    const handler = (e) => {
+      if (e.key === "Escape") onClose?.();
+      if (e.key === "ArrowRight") onNext?.();
+      if (e.key === "ArrowLeft") onPrev?.();
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [onClose, onNext, onPrev]);
+
+  useEffect(() => {
+    setSlideIdx(0);
+  }, [item?.id]);
+
+  if (!item) return null;
+
   const detail = PORTFOLIO_DETAILS[item.id] || {
+    id: item.id,
     title: item.title,
     cat: item.cat,
     categoryLabel: item.categoryLabel || item.cat,
@@ -30,27 +56,18 @@ export default function PortfolioModal({ item, onClose, onPrev, onNext, onOpenEn
     url: item.demoUrl || "https://stackwisesolutions.com",
     github: item.githubUrl || "https://github.com",
     overview: item.desc,
-    description: [item.desc],
-    gallery: [item.image],
+    description: item.desc ? [item.desc] : [],
+    gallery: item.image ? [item.image] : [],
     stack: item.stack || [],
     metrics: item.metrics || [],
   };
 
-  const galleryImages = detail.gallery && detail.gallery.length > 0 ? detail.gallery : [item.image];
-
-  useEffect(() => {
-    const handler = (e) => {
-      if (e.key === "Escape") onClose();
-      if (e.key === "ArrowRight") onNext();
-      if (e.key === "ArrowLeft") onPrev();
-    };
-    window.addEventListener("keydown", handler);
-    return () => window.removeEventListener("keydown", handler);
-  }, [onClose, onNext, onPrev]);
-
-  useEffect(() => {
-    setSlideIdx(0);
-  }, [item.id]);
+  const galleryImages =
+    detail.gallery && detail.gallery.length > 0
+      ? detail.gallery
+      : item.image
+      ? [item.image]
+      : [];
 
   return (
     <div
@@ -195,7 +212,7 @@ export default function PortfolioModal({ item, onClose, onPrev, onNext, onOpenEn
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-base border border-amber-900/15 text-[#1a1611] text-xs font-semibold hover:border-gold hover:text-gold transition"
                 >
-                  <Github className="w-3.5 h-3.5" />
+                  <FaGithub className="w-3.5 h-3.5" />
                   <span>Inspect Code Architecture</span>
                 </a>
               )}

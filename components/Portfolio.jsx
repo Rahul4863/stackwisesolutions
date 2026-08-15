@@ -7,12 +7,10 @@ import {
   Search,
   X,
   ExternalLink,
-  Github,
   ArrowRight,
   TrendingUp,
   Layers,
   LayoutGrid,
-  Sparkle,
   CheckCircle2,
   SlidersHorizontal,
   ChevronRight,
@@ -313,11 +311,9 @@ export default function Portfolio() {
                         {featuredItem.tagline}
                       </p>
 
-                      <p className="text-muted text-sm sm:text-base leading-relaxed mb-6">
+                      <p className="text-muted text-xs sm:text-sm leading-relaxed mb-4 line-clamp-2 flex-1">
                         {featuredItem.desc}
                       </p>
-
-                      {/* Impact Metrics Banner */}
                       {featuredItem.metrics && (
                         <div className="grid grid-cols-3 gap-2.5 bg-base/80 rounded-2xl p-3.5 border border-amber-900/10 mb-6">
                           {featuredItem.metrics.map((m, idx) => (
@@ -454,10 +450,17 @@ export default function Portfolio() {
 
                     {/* Card Action Footer */}
                     <div className="flex items-center justify-between pt-3.5 border-t border-amber-900/10 mt-auto">
-                      <span className="inline-flex items-center gap-1 text-xs font-bold text-[#1a1611] group-hover:text-gold transition">
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          openItem(item);
+                        }}
+                        className="inline-flex items-center gap-1 text-xs font-bold text-[#1a1611] group-hover:text-gold transition cursor-pointer"
+                      >
                         <span>Explore Case Study</span>
                         <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                      </span>
+                      </button>
 
                       {item.demoUrl && (
                         <div
@@ -484,9 +487,9 @@ export default function Portfolio() {
               <h3 className="text-xl sm:text-2xl font-display font-bold text-[#1a1611] mb-2">
                 Have a custom product idea or complex engineering challenge?
               </h3>
-              <p className="text-muted text-sm sm:text-base mb-6">
+              {/* <p className="text-[#1a1611] text-sm sm:text-base mb-6">
                 From initial architecture design to production launch, we build scalable platforms tailored to your business roadmap.
-              </p>
+              </p> */}
               <div className="flex flex-wrap items-center justify-center gap-3">
                 <button
                   onClick={() => setEnquiryOpen(true)}

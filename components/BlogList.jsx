@@ -143,7 +143,7 @@ export default function BlogList() {
               Actionable Guides & Tech Playbooks
             </h1>
 
-            <p className="text-[#4a4134] text-base sm:text-lg mt-4 leading-relaxed font-semibold">
+            <p className="text-black text-base sm:text-lg mt-4 leading-relaxed font-semibold">
               Battle-tested architectural blueprints, performance breakdowns, and growth frameworks straight from our engineering floor.
             </p>
           </div>
@@ -339,7 +339,7 @@ export default function BlogList() {
                         {featuredPost.title}
                       </h2>
 
-                      <p className="text-[#3b3226] text-sm sm:text-base mt-4 leading-relaxed font-semibold">
+                      <p className="text-black text-base sm:text-lg mt-4 leading-relaxed font-semibold">
                         {featuredPost.excerpt}
                       </p>
 
