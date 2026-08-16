@@ -148,7 +148,7 @@ export default function Navbar() {
             </button>
 
             {servicesOpen && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2.5 w-[90vw] max-w-[560px] bg-white/98 backdrop-blur-xl border border-amber-900/15 rounded-3xl shadow-2xl p-4 grid grid-cols-2 gap-1.5 z-50">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2.5 w-[90vw] max-w-[580px] bg-[#fffefb] border border-amber-800/25 rounded-3xl shadow-2xl shadow-amber-950/20 p-4 grid grid-cols-2 gap-2 z-50 animate-in fade-in zoom-in-95 duration-150">
                 {SERVICES.map((s) => {
                   const Icon = s.icon;
                   return (
@@ -156,16 +156,16 @@ export default function Navbar() {
                       key={s.slug}
                       href={`/services/${s.slug}`}
                       onClick={() => setServicesOpen(false)}
-                      className="flex items-start gap-3 p-3 rounded-2xl hover:bg-amber-500/10 transition group"
+                      className="flex items-start gap-3 p-3 rounded-2xl bg-amber-50/40 hover:bg-amber-100/80 border border-amber-900/10 hover:border-amber-400/60 transition-all duration-200 group"
                     >
-                      <div className="w-9 h-9 rounded-xl bg-amber-100 border border-amber-300/50 flex items-center justify-center text-amber-800 shrink-0 group-hover:bg-amber-800 group-hover:text-white transition-colors">
+                      <div className="w-9 h-9 rounded-xl bg-amber-100 border border-amber-300 flex items-center justify-center text-amber-900 shrink-0 group-hover:bg-amber-800 group-hover:text-white group-hover:border-amber-800 transition-all">
                         <Icon size={16} />
                       </div>
                       <div className="overflow-hidden">
-                        <div className="text-[#1a1611] text-sm font-bold truncate group-hover:text-amber-950">
+                        <div className="text-[#1a1611] text-sm font-bold truncate group-hover:text-amber-900 transition-colors">
                           {s.title}
                         </div>
-                        <div className="text-[#6e6151] text-xs mt-0.5 truncate">
+                        <div className="text-[#5c5042] text-xs mt-0.5 truncate group-hover:text-amber-950 font-medium transition-colors">
                           {s.tagline}
                         </div>
                       </div>
@@ -175,7 +175,7 @@ export default function Navbar() {
                 <Link
                   href="/services"
                   onClick={() => setServicesOpen(false)}
-                  className="col-span-2 mt-1 text-center text-amber-900 text-xs font-bold py-2.5 rounded-2xl bg-amber-100/80 border border-amber-300/60 hover:bg-amber-800 hover:text-white transition"
+                  className="col-span-2 mt-1 text-center text-white text-xs font-bold py-2.5 rounded-2xl bg-amber-800 hover:bg-amber-900 border border-amber-800 shadow-sm shadow-amber-800/20 transition-all"
                 >
                   Explore All Services →
                 </Link>
@@ -215,7 +215,7 @@ export default function Navbar() {
             </button>
 
             {industriesOpen && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2.5 w-[90vw] max-w-[560px] bg-white/98 backdrop-blur-xl border border-amber-900/15 rounded-3xl shadow-2xl p-4 grid grid-cols-2 gap-1.5 z-50">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2.5 w-[90vw] max-w-[580px] bg-[#fffefb] border border-amber-800/25 rounded-3xl shadow-2xl shadow-amber-950/20 p-4 grid grid-cols-2 gap-2 z-50 animate-in fade-in zoom-in-95 duration-150">
                 {INDUSTRIES.map((ind) => {
                   const Icon = ind.icon;
                   return (
@@ -223,16 +223,16 @@ export default function Navbar() {
                       key={ind.slug}
                       href={`/industry/${ind.slug}`}
                       onClick={() => setIndustriesOpen(false)}
-                      className="flex items-start gap-3 p-3 rounded-2xl hover:bg-amber-500/10 transition group"
+                      className="flex items-start gap-3 p-3 rounded-2xl bg-amber-50/40 hover:bg-amber-100/80 border border-amber-900/10 hover:border-amber-400/60 transition-all duration-200 group"
                     >
-                      <div className="w-9 h-9 rounded-xl bg-amber-100 border border-amber-300/50 flex items-center justify-center text-amber-800 shrink-0 group-hover:bg-amber-800 group-hover:text-white transition-colors">
+                      <div className="w-9 h-9 rounded-xl bg-amber-100 border border-amber-300 flex items-center justify-center text-amber-900 shrink-0 group-hover:bg-amber-800 group-hover:text-white group-hover:border-amber-800 transition-all">
                         <Icon size={16} />
                       </div>
                       <div className="overflow-hidden">
-                        <div className="text-[#1a1611] text-sm font-bold truncate group-hover:text-amber-950">
+                        <div className="text-[#1a1611] text-sm font-bold truncate group-hover:text-amber-900 transition-colors">
                           {ind.title}
                         </div>
-                        <div className="text-[#6e6151] text-xs mt-0.5 truncate">
+                        <div className="text-[#5c5042] text-xs mt-0.5 truncate group-hover:text-amber-950 font-medium transition-colors">
                           {ind.tagline}
                         </div>
                       </div>
@@ -242,7 +242,7 @@ export default function Navbar() {
                 <Link
                   href="/industries"
                   onClick={() => setIndustriesOpen(false)}
-                  className="col-span-2 mt-1 text-center text-amber-900 text-xs font-bold py-2.5 rounded-2xl bg-amber-100/80 border border-amber-300/60 hover:bg-amber-800 hover:text-white transition"
+                  className="col-span-2 mt-1 text-center text-white text-xs font-bold py-2.5 rounded-2xl bg-amber-800 hover:bg-amber-900 border border-amber-800 shadow-sm shadow-amber-800/20 transition-all"
                 >
                   Explore All Industries →
                 </Link>

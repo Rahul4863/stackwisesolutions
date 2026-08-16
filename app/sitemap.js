@@ -1,9 +1,7 @@
 import { SERVICES, INDUSTRIES, SITE_INFO } from "@/data/constants";
 import { BLOG_POSTS } from "@/data/blogs";
-
 export default function sitemap() {
   const now = new Date();
-
   const staticRoutes = [
     {
       url: SITE_INFO.baseUrl,
@@ -36,7 +34,6 @@ export default function sitemap() {
       priority: 0.9,
     },
   ];
-
   const serviceRoutes = SERVICES.map((s) => ({
     url: `${SITE_INFO.baseUrl}/services/${s.slug}`,
     lastModified: now,
