@@ -16,6 +16,13 @@ export default function Reveal({
     const node = ref.current;
     if (!node) return;
 
+    // Check if element is already inside or near viewport on mount
+    const rect = node.getBoundingClientRect();
+    if (rect.top < window.innerHeight + 50 && rect.bottom > -50) {
+      setVisible(true);
+      if (once) return;
+    }
+
     const obs = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -25,7 +32,7 @@ export default function Reveal({
           setVisible(false);
         }
       },
-      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.05, rootMargin: "60px 0px 0px 0px" }
     );
 
     obs.observe(node);
@@ -34,13 +41,13 @@ export default function Reveal({
 
   const hiddenTransform =
     {
-      up: "translate-y-10",
-      down: "-translate-y-10",
-      left: "translate-x-10",
-      right: "-translate-x-10",
+      up: "translate-y-6 sm:translate-y-8",
+      down: "-translate-y-6 sm:-translate-y-8",
+      left: "translate-x-4 sm:translate-x-8",
+      right: "-translate-x-4 sm:-translate-x-8",
       scale: "scale-95",
       none: "",
-    }[direction] || "translate-y-10";
+    }[direction] || "translate-y-6 sm:translate-y-8";
 
   return (
     <div
